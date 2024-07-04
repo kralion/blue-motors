@@ -15,7 +15,7 @@ const navItems = [
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="size-6 h-5 w-5 text-[#ffa814]"
+                class="size-6 h-5 w-5 text-red-dark"
             >
                 <path
                     fill-rule="evenodd"
@@ -27,7 +27,7 @@ const navItems = [
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                class="size-6 h-5 w-5 ml-4 text-[#ffa814]"
+                class="size-6 h-5 w-5 ml-4 text-red-dark"
             >
                 <path
                     fill-rule="evenodd"
@@ -39,11 +39,11 @@ const navItems = [
         </div>
     </div>
 
-    <nav class="bg-gray-900 text-white p-4">
+    <nav class="bg-light-bg text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
         
             <button
-                class="md:hidden hover:text-yellow-400 transition duration-300 focus:outline-none"
+                class="md:hidden hover:text-red-dark transition duration-300 focus:outline-none"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ const navItems = [
                         <li>
                             <a
                                 href={item.href}
-                                class="hover:text-yellow-400 transition duration-300 font-bold uppercase text-sm flex items-center gap-2"
+                                class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2"
                             >
                                 {item.name}
                                 {item.hasDropdown && (
@@ -98,7 +98,7 @@ const navItems = [
             </ul>
 
             <div class="flex items-center space-x-4">
-                <button class="hover:text-yellow-400 transition duration-300">
+                <button class="hover:text-red-dark transition duration-300">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-6 w-6"
@@ -115,7 +115,7 @@ const navItems = [
                     </svg>
                 </button>
                 <button
-                    class="hover:text-yellow-400 hidden md:flex transition duration-300 relative"
+                    class="hover:text-red-dark hidden md:flex transition duration-300 relative"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -132,12 +132,12 @@ const navItems = [
                         ></path>
                     </svg>
                     <span
-                        class="absolute -top-2 -right-2 bg-yellow-400 text-xs text-black rounded-full h-4 w-4 flex items-center justify-center"
+                        class="absolute -top-2 -right-2 bg-red-dark text-xs text-black rounded-full h-4 w-4 flex items-center justify-center"
                         >0</span
                     >
                 </button>
                 <button
-                    class="hover:text-yellow-400 transition duration-300 relative"
+                    class="hover:text-red-dark transition duration-300 relative"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +154,7 @@ const navItems = [
                         ></path>
                     </svg>
                     <span
-                        class="absolute -top-2 -right-2 bg-yellow-400 text-xs text-black rounded-full h-4 w-4 flex items-center justify-center"
+                        class="absolute -top-2 -right-2 bg-red-dark text-xs text-black rounded-full h-4 w-4 flex items-center justify-center"
                         >0</span
                     >
                 </button>
