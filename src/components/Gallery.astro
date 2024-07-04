@@ -1,0 +1,29 @@
+---
+import data from "../data/data.json";
+---
+
+<div class="space-y-5">
+  <h1 class="text-xl font-bold my-4">
+    {data.detallesMotocicleta.modelo}
+  </h1>
+  <hr class="border-gray-700" />
+  <div class="flex gap-2">
+    <img src={data.detallesMotocicleta.fotos[0].image1} alt="image" />
+    <img src={data.detallesMotocicleta.fotos[0].image2} alt="image" />
+    <img src={data.detallesMotocicleta.fotos[0].image3} alt="image" />
+  </div>
+
+  {
+    data.detallesMotocicleta.rendimiento.map((rendimiento) => (
+      <>
+        <hr class="border-gray-700" />
+        <h1 class="text-xl font-bold my-4">
+          {data.detallesMotocicleta.modelo}, {rendimiento.carrera}
+        </h1>
+      </>
+    ))
+  }
+  <video controls>
+    <source src={data.detallesMotocicleta.video} type="video/mp4" />
+  </video>
+</div>

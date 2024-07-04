@@ -1,0 +1,41 @@
+---
+import specifications from "../data/data.json";
+---
+
+<div class="space-y-2">
+  <h1 class="text-xl font-bold my-4">
+    {specifications.detallesMotocicleta.modelo}
+  </h1>
+  <hr class="border-gray-700" />
+  <div class="flex items-center justify-between">
+    <span class="text-white/50 uppercase text-xs"> Ubicacion</span>
+    <span class="font-bold">
+      {specifications.detallesMotocicleta.ubicacion}</span
+    >
+  </div>
+  <hr class="border-gray-700" />
+  <div class="pt-10">
+    <h1 class="text-xl font-bold">Performance</h1>
+  </div>
+  {
+    specifications.detallesMotocicleta.rendimiento.map((rendimiento) => (
+      <>
+        <hr class="border-gray-700" />
+        <div class="flex items-center justify-between">
+          <span class="text-white/50 uppercase text-xs"> Motor</span>
+          <span class="font-bold text-sm">{rendimiento.motor}</span>
+        </div>
+        <hr class="border-gray-700" />
+        <div class="flex items-center justify-between">
+          <span class="text-white/50 uppercase text-xs"> Desplazamiento</span>
+          <span class="font-bold text-sm">{rendimiento.desplazamiento}</span>
+        </div>
+        <hr class="border-gray-700" />
+        <div class="flex items-center justify-between">
+          <span class="text-white/50 uppercase text-xs">Carrera</span>
+          <span class="font-bold text-sm">{rendimiento.carrera}</span>
+        </div>
+      </>
+    ))
+  }
+</div>

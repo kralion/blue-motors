@@ -1,0 +1,47 @@
+{
+  "detallesMotocicleta": {
+    "disponibilidad": "En Stock",
+    "modelo": "Honda CBR600RR",
+    "ubicacion": "New York",
+    "descripcion": "Este motor es un modelo de motocicleta de bajo costo, con un rendimiento",
+    "numeroStock": "NKS-1256",
+    "numeroVin": "JVAVP27E6BA013536",
+    "caracteristicas": [
+      "Auxiliary heating",
+      "Bluetooth",
+      "CD player",
+      "Central locking",
+      "Airbags",
+      "Immobilizer",
+      "Particulate filter",
+      "ABS",
+      "Alloy wheels",
+      "Electric side mirror",
+      "Sports package",
+      "Sports suspension",
+      "MP3 interface",
+      "Navigation system",
+      "Panoramic roof"
+    ],
+    "tipoModelo": "Cobre Rojizo",
+    "fotos": [
+      {
+        "image1": "https://motors.stylemixthemes.com/motorcycles/wp-content/uploads/sites/5/2016/08/motorcycle-5-350x205.jpg",
+        "image2": "https://motors.stylemixthemes.com/motorcycles/wp-content/uploads/sites/5/2016/08/motorcycle-5-350x205.jpg",
+        "image3": "https://motors.stylemixthemes.com/motorcycles/wp-content/uploads/sites/5/2016/08/motorcycle-5-350x205.jpg"
+      }
+    ],
+    "video": "https://youtu.be/rv8kT-3gG1U",
+    "rendimiento": [
+      {
+        "motor": "4 tiempos, refrigerado por líquido, DOHC, Paralelo Doble",
+        "desplazamiento": "296cc",
+        "carrera": "49.0 mm",
+        "relacionCompresion": "10.6:1",
+        "sistemaCombustible": "DFI® con cuerpos de aceleración duales de 32mm",
+        "encendido": "TCBI con avance digital",
+        "sistemaRefrigeracion": "Líquido/Aire"
+      }
+    ]
+  }
+}

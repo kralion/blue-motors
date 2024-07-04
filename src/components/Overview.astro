@@ -1,0 +1,24 @@
+---
+import rightArrow from "../assets/right.svg";
+import data from "../data/data.json";
+const { description } = Astro.props;
+---
+
+<div class="space-y-5">
+  <h1 class="text-xl font-bold">Un vistazo general</h1>
+  <hr class="border-gray-700" />
+  <p class="text-xs">{description}</p>
+  <hr class="border-gray-800" />
+  <h1 class="text-xl font-bold">Características</h1>
+  <hr class="border-gray-700" />
+  <div class="grid grid-cols-4 gap-4">
+    {
+      data.detallesMotocicleta.caracteristicas.map((feature) => (
+        <div class="flex items-center gap-2">
+          <img src={rightArrow.src} alt="icon" width="15" height="15" />
+          <span class="text-sm">{feature}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>
