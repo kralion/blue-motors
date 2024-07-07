@@ -11,7 +11,7 @@ const { description } = Astro.props;
   <hr class="border-gray-800" />
   <h1 class="text-xl font-bold">Características</h1>
   <hr class="border-gray-700" />
-  <div class="grid grid-cols-4 gap-4">
+  <div class="grid lg:grid-cols-4 grid-cols-2 gap-4">
     {
       data.detallesMotocicleta.caracteristicas.map((feature) => (
         <div class="flex items-center gap-2">

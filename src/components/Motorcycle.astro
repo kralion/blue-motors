@@ -27,7 +27,7 @@ function switchTab(index) {
 ---
 
 <div
-  class="text-white shadow-lg overflow-hidden flex flex-col md:flex-row gap-7"
+  class="text-white shadow-lg overflow-hidden flex lg:flex-row gap-7 flex-col-reverse"
 >
   <div class="flex flex-col gap-4 md:w-1/3">
     <div>
@@ -136,20 +136,20 @@ function switchTab(index) {
   </div>
 
   <div class="space-y-10">
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center lg:px-0 px-4">
       <div class="flex justify-items-start flex-col md:w-1/2">
-        <h4 class="text-gray-400 uppercase text-sm font-semibold">
+        <h4 class="text-gray-400 uppercase text-xs lg:text-sm font-semibold">
           {category}
         </h4>
-        <h1 class="text-3xl font-bold r">
+        <h1 class="lg:text-3xl text-xl font-bold r">
           {name}
         </h1>
       </div>
       <div
         class="flex justify-items-end py-2 flex-col px-5 text-right bg-red-dark w-fit"
       >
-        <h5 class="text-white/60 text-sm">Nuestro Precio</h5>
-        <h1 class="text-xl font-bold">
+        <h5 class="text-white/60 lg:text-sm text-xs">Nuestro Precio</h5>
+        <h1 class="lg:text-xl font-bold">
           ${price.toLocaleString()}
         </h1>
       </div>
@@ -157,25 +157,34 @@ function switchTab(index) {
     <hr class="border-gray-500" />
     <img src={imageUrl} alt={name} />
 
-    <div class="w-full">
-      <div class="flex w-full">
+    <div class="flex flex-col">
+      <div class="flex lg:w-full overflow-x-auto lg:overflow-x-hidden">
         <button
-          class="tab-btn p-4 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase text-xs w-full font-bold focus:border-red-dark bg-red-dark"
-          data-tab="0">Vista General</button
+          class="tab-btn p-4 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase text-xs w-full font-bold min-w-36 focus:border-red-dark bg-red-dark flex justify-center items-center"
+          data-tab="0"
         >
+          Vista General
+        </button>
         <button
-          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase w-full text-xs font-bold focus:border-red-dark bg-red-dark"
-          data-tab="1">Especificaciones</button
+          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase w-full lg:text-xs min-w-36 text-[0.7rem] font-bold focus:border-red-dark bg-red-dark flex justify-center items-center"
+          data-tab="1"
         >
+          Especificaciones
+        </button>
         <button
-          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase w-full focus:border-red-dark bg-red-dark text-xs font-bold"
-          data-tab="2">Galería de Imágenes</button
+          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase min-w-44 w-full focus:border-red-dark bg-red-dark text-xs font-bold flex justify-center items-center"
+          data-tab="2"
         >
+          Galería de Imágenes
+        </button>
         <button
-          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase w-full focus:border-red-dark bg-red-dark text-xs font-bold"
-          data-tab="3">Contáctanos</button
+          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase min-w-36 w-full focus:border-red-dark bg-red-dark text-xs font-bold flex justify-center items-center"
+          data-tab="3"
         >
+          Contáctanos
+        </button>
       </div>
+
       <div id="tab-0" class="tab-content p-4">
         <Overview description={description} />
       </div>
