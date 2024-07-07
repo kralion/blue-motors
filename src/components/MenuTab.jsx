@@ -15,10 +15,10 @@ export default function MenuTab() {
             <TabGroup className='bg-white text-gray-500 flex '>
                 <TabList className='flex flex-col border-r-[1px] border-gray-200 *:py-[15px] *:pl-[20px] *:pr-[100px]'>
                     <Tab
-                    className='data-[selected]:text-red-dark data-[selected]:font-medium
+                        className='data-[selected]:text-red-dark data-[selected]:font-medium
                     focus:outline-none
                     '
-                    key={"uno"}>
+                        key={"uno"}>
                         FEATURED PRODUCTS
                     </Tab>
                     <Tab className='data-[selected]:text-red-dark data-[selected]:font-medium
@@ -26,13 +26,20 @@ export default function MenuTab() {
                     ' key={"dos"}>
                         SALE OFF PRODUCTS
                     </Tab>
+                    <div
+                        className='data-[selected]:text-red-dark data-[selected]:font-medium
+                    focus:outline-none hover:text-red-dark
+                    '
+                        key={"tres"}>
+                        <a href='/shop '>SHOP</a>
+                    </div>
                 </TabList>
                 <TabPanels className='p-[20px]'>
 
-                    <TabPanel 
-                    transition
-                    className='p-[15px]'
-                    key={""}>
+                    <TabPanel
+                        transition
+                        className='p-[15px]'
+                        key={""}>
                         <div className='flex '>
                             <div className='flex flex-col'>
                                 <div className='my-[20px]'>
@@ -70,7 +77,7 @@ export default function MenuTab() {
                     </TabPanel>
 
                     <TabPanel key={""} className='p-[15px]'>
-                    <div className='flex '>
+                        <div className='flex '>
                             <div className='flex flex-col'>
                                 <div className='my-[20px]'>
                                     <p className="font-medium mb-[10px]">PRODUCTS</p>
