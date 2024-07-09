@@ -13,7 +13,7 @@ export default function MenuTab() {
     return (
         <>
             <TabGroup className='bg-white text-gray-500 flex '>
-                <TabList className='flex flex-col border-r-[1px] border-gray-200 *:py-[15px] *:pl-[20px] *:pr-[100px]'>
+                <TabList className='text-start flex flex-col border-r-[1px] border-gray-200 *:py-[15px] *:pl-[20px] *:pr-[100px]'>
                     <Tab
                     className='data-[selected]:text-red-dark data-[selected]:font-medium
                     focus:outline-none
@@ -21,11 +21,18 @@ export default function MenuTab() {
                     key={"uno"}>
                         FEATURED PRODUCTS
                     </Tab>
-                    <Tab className='data-[selected]:text-red-dark data-[selected]:font-medium
+                    <Tab className='data-[selected]:text-red-dark data-[selected]:font-medium hover:text-red-dark
                     focus:outline-none
                     ' key={"dos"}>
-                        SALE OFF PRODUCTS
+                SALE OFF PRODUCTS
                     </Tab>
+                    <div
+                    className='data-[selected]:text-red-dark data-[selected]:font-medium
+                    focus:outline-none hover:text-red-dark
+                    '
+                    key={"tres"}>
+                        <a href='/shop '>SHOP</a>
+                    </div>
                 </TabList>
                 <TabPanels className='p-[20px]'>
 
