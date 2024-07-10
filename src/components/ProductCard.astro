@@ -7,13 +7,13 @@ const { image, details, price, id } = Astro.props;
   class="relative
                         after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-[10%] after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
                         after:hover:h-[80%]
-    hover:cursor-pointer px-8 py-6 font-medium text-gray-200 w-fit flex items-center gap-x-10"
+    hover:cursor-pointer px-8 py-6 font-medium text-gray-200 w-fit flex items-center m-4 gap-5"
 >
   <div class="image w-36 h-36">
     <img src={image} alt="Logo" class="cover" />
   </div>
 
-  <div class="p-[5px]">
+  <div class="p-[5px] w-52">
     <div class="details hover:text-red-dark">{details}</div>
     <div class="relative"></div>
     <div class="price">${price}</div>

@@ -1,8 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProductCard from "../components/ProductCard.astro";
-const response = await fetch("https://bluemotorsec.com/wp-json/wp/v2/media");
-const media = await response.json();
+const response = await fetch(
+  "https://bluemotorsec.com/wp-json/wp/v2/productos-tienda"
+);
+const productos = await response.json();
+const createMarkup = (htmlString) => {
+  return { __html: htmlString };
+};
 ---
 
 <Layout title="Bluemotors - Inicio">
@@ -14,18 +19,16 @@ const media = await response.json();
       </div>
       <div>
         {
-          media.length > 0 ? (
-            media.map((item) => (
-              <>
-                <ProductCard
-                  details="Honda CBR600RR"
-                  price="580.00"
-                  image={item.source_url}
-                  alt={item.alt_text}
-                  id={item.id}
-                  stars={3}
-                />
-              </>
+          productos.length > 0 ? (
+            productos.map((item) => (
+              <ProductCard
+                details={item.acf.nombre}
+                price={item.acf.precio}
+                image={item.source_url}
+                alt={item.alt_text}
+                id={item.id}
+                stars={3}
+              />
             ))
           ) : (
             <p>No se encontraron imágenes.</p>
@@ -33,24 +36,22 @@ const media = await response.json();
         }
       </div>
     </div>
+
     <div>
       <div class="my-[20px]">
         <p class="font-medium mb-[10px] text-white">SALE PRODUCTS</p>
         <div class="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
       </div>
       {
-        media.length > 0 ? (
-          media.map((item) => (
-            <>
-              <ProductCard
-                details="Honda CBR600RR"
-                price="580.00"
-                image={item.source_url}
-                alt={item.alt_text}
-                id={item.id}
-                stars={3}
-              />
-            </>
+        productos.length > 0 ? (
+          productos.map((item) => (
+            <ProductCard
+              details={item.acf.nombre}
+              price={item.acf.precio}
+              image={item.imagen}
+              alt="thumbnail"
+              id={item.id}
+            />
           ))
         ) : (
           <p>No se encontraron imágenes.</p>

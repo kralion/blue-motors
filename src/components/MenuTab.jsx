@@ -1,8 +1,5 @@
-import ImagMenu from "./../assets/imagmenu.png";
-
 import chaqueta from "../assets/chaqueta.png";
 import casco from "../assets/casco.png";
-import guantes from "../assets/guantes.png";
 import tubo from "../assets/tubo.png";
 import CardMenu from "./CardMenu";
 
@@ -14,28 +11,28 @@ export default function MenuTab() {
       <TabGroup className="bg-white text-gray-500 flex ">
         <TabList className="flex flex-col border-r-[1px] border-gray-200 *:py-[15px] *:pl-[20px] *:pr-[100px]">
           <Tab
-            className="data-[selected]:text-red-dark data-[selected]:font-medium
+            className="data-[selected]:text-red-dark  w-64 data-[selected]:font-medium
                     focus:outline-none
                     "
             key={"uno"}
           >
-            FEATURED PRODUCTS
+            MAS VENDIDOS
           </Tab>
           <Tab
-            className="data-[selected]:text-red-dark data-[selected]:font-medium
+            className="data-[selected]:text-red-dark w-64 data-[selected]:font-medium
                     focus:outline-none
                     "
             key={"dos"}
           >
-            SALE OFF PRODUCTS
+            FUERA DE STOCK
           </Tab>
           <div
-            className="data-[selected]:text-red-dark data-[selected]:font-medium
+            className="data-[selected]:text-red-dark w-64 ml-2 data-[selected]:font-medium
                     focus:outline-none hover:text-red-dark
                     "
             key={"tres"}
           >
-            <a href="/shop ">SHOP</a>
+            <a href="/shop ">VER TODO</a>
           </div>
         </TabList>
         <TabPanels className="p-[20px]">
