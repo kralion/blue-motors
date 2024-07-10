@@ -79,7 +79,7 @@ export default function SearchBar() {
                         {searchResult.length > 0 && (
                             <div className="mt-4">
                                 {searchResult.map((producto, index) => (
-                                    <a href="/shop">
+                                    <a href="/producto/123">
                                         <div key={index} className="flex items-center mt-4">
                                             <img src={producto.fotos[0].image1} alt="Producto" className="w-20 h-16 mr-4" />
                                             <div>
