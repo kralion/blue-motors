@@ -1,13 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProductCard from "../components/ProductCard.astro";
-const response = await fetch(
-  "https://bluemotorsec.com/wp-json/wp/v2/productos-tienda"
-);
-const productos = await response.json();
-const createMarkup = (htmlString) => {
-  return { __html: htmlString };
-};
+import productData from "../data/data.json";
+// const response = await fetch(
+//   "https://bluemotorsec.com/wp-json/wp/v2/productos-tienda"
+// );
+// const productos = await response.json();
+// const createMarkup = (htmlString) => {
+//   return { __html: htmlString };
+// };
+
+const productos = [productData.detallesMotocicleta];
 ---
 
 <Layout title="Bluemotors - Inicio">
@@ -19,20 +22,16 @@ const createMarkup = (htmlString) => {
       </div>
       <div>
         {
-          productos.length > 0 ? (
-            productos.map((item) => (
-              <ProductCard
-                details={item.acf.nombre}
-                price={item.acf.precio}
-                image={item.source_url}
-                alt={item.alt_text}
-                id={item.id}
-                stars={3}
-              />
-            ))
-          ) : (
-            <p>No se encontraron imágenes.</p>
-          )
+          productos.map((item, index) => (
+            <ProductCard 
+              details={item.modelo}
+              price={10000}
+              image={item.fotos[0].image1}
+              alt={item.modelo}
+              id={index + 1}
+              stars={3}
+            />
+          ))
         }
       </div>
     </div>
@@ -43,19 +42,16 @@ const createMarkup = (htmlString) => {
         <div class="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
       </div>
       {
-        productos.length > 0 ? (
-          productos.map((item) => (
-            <ProductCard
-              details={item.acf.nombre}
-              price={item.acf.precio}
-              image={item.imagen}
-              alt="thumbnail"
-              id={item.id}
+        productos.map((item, index) => (
+            <ProductCard 
+              details={item.modelo}
+              price={10000}
+              image={item.fotos[0].image1}
+              alt={item.modelo}
+              id={index + 1}
+              stars={3}
             />
           ))
-        ) : (
-          <p>No se encontraron imágenes.</p>
-        )
       }
     </div>
   </div>
