@@ -1,21 +1,58 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Motorcycle from "../components/Motorcycle.astro";
+import ProductCard from "../components/ProductCard.astro";
+import productData from "../data/data.json";
+// const response = await fetch(
+//   "https://bluemotorsec.com/wp-json/wp/v2/productos-tienda"
+// );
+// const productos = await response.json();
+// const createMarkup = (htmlString) => {
+//   return { __html: htmlString };
+// };
+
+const productos = [productData.detallesMotocicleta];
 ---
 
-<Layout title="Bluemotors - Tienda">
-  <main class="mx-auto max-w-6xl lg:py-20 py-10 sm:px-6 lg:px-8">
-    <Motorcycle
-      name="Honda CBR600RR"
-      description="Honda CBR600RR Motorcycle"
-      imageUrl="https://motors.stylemixthemes.com/motorcycles/wp-content/uploads/sites/5/2016/08/motorcycle-4-1110x577.jpg"
-      price={10000}
-      category="Motocicleta"
-      mileage="100,000 km"
-      engine="4.0L"
-      year="2022"
-      color="Negro"
-      vin="1G1A1B1C1D1E1F1G1H1I"
-    />
-  </main>
+<Layout title="Bluemotors - Inicio">
+  <div class="flex flex-col lg:flex-row justify-center gap-20">
+    <div>
+      <div class="my-[20px]">
+        <p class="font-medium mb-[10px] text-white">TOP RATED PRODUCTS</p>
+        <div class="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
+      </div>
+      <div>
+        {
+          productos.map((item, index) => (
+            <ProductCard 
+              details={item.modelo}
+              price={10000}
+              image={item.fotos[0].image1}
+              alt={item.modelo}
+              id={index + 1}
+              stars={3}
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    <div>
+      <div class="my-[20px]">
+        <p class="font-medium mb-[10px] text-white">SALE PRODUCTS</p>
+        <div class="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
+      </div>
+      {
+        productos.map((item, index) => (
+            <ProductCard 
+              details={item.modelo}
+              price={10000}
+              image={item.fotos[0].image1}
+              alt={item.modelo}
+              id={index + 1}
+              stars={3}
+            />
+          ))
+      }
+    </div>
+  </div>
 </Layout>

@@ -4,6 +4,7 @@ import ImagMenu from './../assets/imagmenu.png';
 import { Popover, PopoverBackdrop, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import MenuTab from './MenuTab';
+import SearchBar from './common/SearchBar';
 const navItems = [
     { name: "Home", href: "/", hasDropdown: true },
     { name: "Mega Menu", href: "/mega-menu", hasDropdown: true },
@@ -551,23 +552,8 @@ export default function SubNavs() {
                         </div>
 
 
-                        <div class="flex items-center space-x-4">
-                            <button class="hover:text-red-dark transition duration-300">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="h-6 w-6"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                                    ></path>
-                                </svg>
-                            </button>
+                        <div class="flex items-center gap-4">
+                            <SearchBar />
                             <button
                                 class="hover:text-red-dark hidden md:flex transition duration-300 relative"
                             >
