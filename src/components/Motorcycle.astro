@@ -31,7 +31,7 @@ function switchTab(index) {
   class="text-white shadow-lg overflow-hidden flex lg:flex-row gap-7 flex-col-reverse"
 >
   <div
-    class="flex flex-col gap-4 md:w-1/3 animate__animated animate__fadeInLeft animate__faste"
+    class="flex flex-col gap-4 md:w-1/3 animate__animated animate__fadeIn animate__faste"
   >
     <div>
       {/* Specifications */}
@@ -138,7 +138,7 @@ function switchTab(index) {
     </div>
   </div>
 
-  <div class="space-y-10">
+  <div class="space-y-10 lg:w-[90dvh]">
     <div class="flex justify-between items-center lg:px-0 px-4">
       <div class="flex justify-items-start flex-col md:w-1/2">
         <h4 class="text-gray-400 uppercase text-xs lg:text-sm font-semibold">
@@ -160,7 +160,7 @@ function switchTab(index) {
     <hr class="border-gray-500" />
     <img src={imageUrl} alt={name} class="w-full" />
 
-    <div class="flex flex-col lg:w-[90dvh]">
+    <div class="flex flex-col">
       <div class="flex lg:w-full overflow-x-auto lg:overflow-x-hidden">
         <button
           class="tab-btn p-4 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase text-xs w-full font-bold min-w-36 focus:border-red-dark bg-red-dark flex justify-center items-center"

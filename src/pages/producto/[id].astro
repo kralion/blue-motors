@@ -20,7 +20,7 @@ const response = await fetch(
 const producto = await response.json();
 ---
 
-<Layout title={`BlueMotors - ${producto.modelo}`}>
+<Layout title={`BlueMotors - ${producto.acf.nombre}`}>
   <main class="mx-auto max-w-6xl lg:py-20 py-10 lg:px-8">
     <Motorcycle
       name={producto.acf.nombre || "Motocicleta"}
