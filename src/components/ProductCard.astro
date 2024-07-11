@@ -1,22 +1,20 @@
 ---
-const { image, details, price, id } = Astro.props;
+const { image, details, price, id, description } = Astro.props;
 ---
 
 <a
-  href={`/producto/123`}
+  href={`/producto/${id}`}
   class="relative
-                        after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-[10%] after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                        after:hover:h-[80%]
-    hover:cursor-pointer px-8 py-6 font-medium text-gray-200 w-fit flex items-center m-4 gap-5"
+    hover:cursor-pointer lg:px-8 py-6 hover:opacity-80 duration-200 ease-in-out font-medium text-gray-200 flex flex-col gap-5"
 >
-  <div class="image w-36 h-36">
-    <img src={image} alt="Logo" class="cover" />
-  </div>
+  <img src={image} alt="Logo" class="cover w-md" />
 
-  <div class="p-[5px] w-52">
-    <div class="details hover:text-red-dark">{details}</div>
-    <div class="relative"></div>
-    <div class="price">${price}</div>
+  <div class="space-y-2 pl-4 lg:pl-0">
+    <div class="details hover:text-red-dark text-xl">{details}</div>
+    <div class="text-white/50 font-light">{description}</div>
+    <div class="py-2 px-5 text-right bg-red-dark w-fit">
+      ${price}
+    </div>
     <div></div>
   </div>
 </a>

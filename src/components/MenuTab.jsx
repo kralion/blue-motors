@@ -32,7 +32,7 @@ export default function MenuTab() {
                     "
             key={"tres"}
           >
-            <a href="/shop ">VER TODO</a>
+            <a href="/productos ">VER TODO</a>
           </div>
         </TabList>
         <TabPanels className="p-[20px]">
