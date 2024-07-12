@@ -2,9 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import SubNavsA from '../components/SubNavsA'
 import MenuTab from '../components/MenuTab'
+import App from '../components/DropDown'
+import  MenuToggle  from "../components/MenuToggle";
 ---
 
 <Layout title="BlueMotors">
   <SubNavsA client:visible />
-  <MenuTab client:visible/>
+  
+  <MenuToggle client:visible />
+  <App client:visible />
+  
+  
 </Layout>
