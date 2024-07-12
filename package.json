@@ -16,6 +16,7 @@
     "@heroicons/react": "^2.1.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "animate.css": "^4.1.1",
     "astro": "^4.11.3",
     "framer-motion": "^11.3.0",
     "react": "^18.3.1",

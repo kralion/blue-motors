@@ -14,6 +14,7 @@ const {
 import exchange from "../assets/exchange.svg";
 import money from "../assets/money.svg";
 import phone from "../assets/phone.svg";
+import "animate.css";
 import share from "../assets/share.svg";
 import Overview from "./Overview.astro";
 import Specifications from "./Specifications.astro";
@@ -29,7 +30,9 @@ function switchTab(index) {
 <div
   class="text-white shadow-lg overflow-hidden flex lg:flex-row gap-7 flex-col-reverse"
 >
-  <div class="flex flex-col gap-4 md:w-1/3">
+  <div
+    class="flex flex-col gap-4 md:w-1/3 animate__animated animate__fadeIn animate__faste"
+  >
     <div>
       {/* Specifications */}
       <div
@@ -47,7 +50,7 @@ function switchTab(index) {
         <hr class="border-gray-700" />
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Motor:</span>
-          {engine}
+          {engine.slice(0, 20)}...
         </div>
         <hr class="border-gray-700" />
 
@@ -135,7 +138,7 @@ function switchTab(index) {
     </div>
   </div>
 
-  <div class="space-y-10">
+  <div class="space-y-10 lg:w-[90dvh]">
     <div class="flex justify-between items-center lg:px-0 px-4">
       <div class="flex justify-items-start flex-col md:w-1/2">
         <h4 class="text-gray-400 uppercase text-xs lg:text-sm font-semibold">
@@ -155,7 +158,7 @@ function switchTab(index) {
       </div>
     </div>
     <hr class="border-gray-500" />
-    <img src={imageUrl} alt={name} />
+    <img src={imageUrl} alt={name} class="w-full" />
 
     <div class="flex flex-col">
       <div class="flex lg:w-full overflow-x-auto lg:overflow-x-hidden">
@@ -185,12 +188,30 @@ function switchTab(index) {
         </button>
       </div>
 
-      <div id="tab-0" class="tab-content p-4">
+      <div
+        id="tab-0"
+        class="tab-content p-4 animate__animated animate__fadeInUp animate__faster"
+      >
         <Overview description={description} />
       </div>
-      <div id="tab-1" class="tab-content p-4 hidden"><Specifications /></div>
-      <div id="tab-2" class="tab-content p-4 hidden"><Gallery /></div>
-      <div id="tab-3" class="tab-content p-4 hidden"><Contact /></div>
+      <div
+        id="tab-1"
+        class="tab-content p-4 hidden animate__animated animate__fadeInUp animate__faster"
+      >
+        <Specifications />
+      </div>
+      <div
+        id="tab-2"
+        class="tab-content p-4 hidden animate__animated animate__fadeInUp animate__faster"
+      >
+        <Gallery />
+      </div>
+      <div
+        id="tab-3"
+        class="tab-content p-4 hidden animate__animated animate__fadeInUp animate__faster"
+      >
+        <Contact />
+      </div>
     </div>
   </div>
 </div>
