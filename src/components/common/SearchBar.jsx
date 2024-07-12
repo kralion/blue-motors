@@ -7,12 +7,15 @@ export default function SearchBar() {
     const [search, setSearch] = useState("");
     const [searchResult, setSearchResult] = useState([]);
 
-    const handleSearch = () => {
+    const handleSearch = async () => {
         if (search.trim() !== "") {
-            const results = Object.values(data).filter(producto => {
-                return producto.modelo.toLowerCase().includes(search.toLowerCase());
-            });
-            setSearchResult(results);
+            try{
+                const response = await fetch(`https://bluemotorsec.com/wp-json/wp/v2/productos-tienda?search=${search}`);
+                const results = await response.json();
+                setSearchResult(results);
+            }catch(error){
+                console.log("Error fetching data: ", error);
+            }
         } else {
             setSearchResult([]);
         }
@@ -72,19 +75,16 @@ export default function SearchBar() {
                             </button>
                         </div>
                         
-
-
-
-                        
+                       
                         {searchResult.length > 0 && (
                             <div className="mt-4">
                                 {searchResult.map((producto, index) => (
-                                    <a href="/producto/123">
-                                        <div key={index} className="flex items-center mt-4">
-                                            <img src={producto.fotos[0].image1} alt="Producto" className="w-20 h-16 mr-4" />
+                                    <a href={`/producto/${producto.id}`} key={index}>
+                                        <div className="flex items-center mt-4">
+                                            <img src={producto.acf.imageUrl} alt="Producto" className="w-20 h-16 mr-4" />
                                             <div>
-                                                <p className="text-white text-lg">{producto.modelo}</p>
-                                                <p className="text-gray-400">{producto.descripcion}</p>
+                                                <p className="text-white text-lg">{producto.acf.nombre}</p>
+                                                <p className="text-gray-400">{producto.acf.descripcion}</p>
                                             </div>
                                         </div>
                                     </a>
