@@ -144,7 +144,7 @@ const DropdownMenu = ({ isOpen }) => {
             {'Home LookBook 2'}
             {'Home Parallax'}
           </MenuItem>
-          <MenuItem label="Shop" route={'./shop'}>
+          <MenuItem label="Shop" route={'./productos'}>
             {'Prouct Listining'}
             {'Woo Pages'}
           </MenuItem>
