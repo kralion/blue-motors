@@ -1,18 +1,11 @@
-import React from "react";
-import ImagMenu from "./../assets/imagmenu.png";
-import {
-  Popover,
-  PopoverBackdrop,
-  PopoverButton,
-  PopoverPanel,
-} from "@headlessui/react";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
-import MenuTab from "./MenuTab";
-import SearchBar from "./common/SearchBar";
+
+import React from 'react';
+import ImagMenu from './../assets/imagmenu.png';
+import { Popover, PopoverBackdrop, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import MenuTab from './MenuTab';
+import DropDown from './DropDown'
+import SearchBar from './common/SearchBar';
 const navItems = [
   { name: "Home", href: "/", hasDropdown: true },
   { name: "Mega Menu", href: "/mega-menu", hasDropdown: true },
@@ -24,7 +17,7 @@ const navItems = [
 export default function SubNavs() {
   return (
     <>
-      <header>
+      <header class='bg-[#00000070] relative z-50 '>
         <div class="bg-[#f8f8f8] hidden md:flex">
           <div class="container mx-auto gap-1 flex py-5 text-[#a5a6a5]">
             <svg
@@ -60,22 +53,11 @@ export default function SubNavs() {
 
         <nav class=" text-white p-4">
           <div class="container mx-auto flex justify-between items-center">
-            <button class="md:hidden hover:text-red-dark transition duration-300 focus:outline-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
-              </svg>
-            </button>
+          <button
+                            class="md:hidden text-white " >
+                        
+                            <DropDown class='' client:visible />
+                        </button>
 
             <div class="flex justify-center md:justify-start">
               <img
