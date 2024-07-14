@@ -17,7 +17,7 @@ const navItems = [
 export default function SubNavs() {
   return (
     <>
-      <header class='bg-[#00000070] relative z-50 '>
+      <header class='bg-gray-900 relative z-50 '>
         <div class="bg-[#f8f8f8] hidden md:flex">
           <div class="container mx-auto gap-1 flex py-5 text-[#a5a6a5]">
             <svg
