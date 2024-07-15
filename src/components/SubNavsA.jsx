@@ -25,65 +25,65 @@ const navItems = [
 export default function SubNavs() {
   return (
     <>
-      <header class="bg-[#00000070] relative z-50 ">
-        <div class="bg-[#13151a] hidden md:flex">
-          <div class="container mx-auto gap-1 flex py-5 text-[#a5a6a5]">
+      <header className="bg-gray-900 relative z-50 ">
+        <div className="bg-[#13151a] hidden md:flex">
+          <div className="container mx-auto gap-1 flex py-5 text-[#a5a6a5]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              class="size-6 h-5 w-5 text-red-dark"
+              className="size-6 h-5 w-5 text-red-dark"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
-            <span class="text-sm font-semibold">
+            <span className="text-sm font-semibold">
               Soporte Personalizado 24/7
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              class="size-6 h-5 w-5 ml-4 text-red-dark"
+              className="size-6 h-5 w-5 ml-4 text-red-dark"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
-            <span class="text-sm font-semibold">Telefono: +51 999 999 999</span>
+            <span className="text-sm font-semibold">Telefono: +51 999 999 999</span>
           </div>
         </div>
 
-        <nav class=" text-white p-4">
-          <div class="container mx-auto flex justify-between items-center">
-            <button class="md:hidden text-white ">
-              <DropDown class="" client:visible />
+        <nav className=" text-white p-4">
+          <div className="container mx-auto flex justify-between items-center">
+            <button className="md:hidden text-white ">
+              <DropDown className="" client:visible />
             </button>
 
-            <a href="/" class="flex justify-center md:justify-start">
-              <img src="/logo.svg" alt="Logo" class="h-16" />
+            <a href="/" className="flex justify-center md:justify-start">
+              <img src="/logo.svg" alt="Logo" className="h-16" />
             </a>
 
-            <div class="hidden md:flex space-x-10">
+            <div className="hidden md:flex space-x-10">
               <Popover className=" ">
                 <PopoverButton>
-                  <a class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
+                  <a className="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
                     HOME
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="size-6 h-4 w-4"
+                      className="size-6 h-4 w-4"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </a>
@@ -184,7 +184,7 @@ export default function SubNavs() {
                           "https://img.freepik.com/premium-psd/bike-motorcycle-sale-promotion-social-media-post-square-banner_252779-770.jpg?uid=R43184783&ga=GA1.1.909938681.1720628665&semt=sph"
                         }
                         alt="Logo"
-                        class="h-[110%] w-[110%]"
+                        className="h-[110%] w-[110%]"
                       />
                     </div>
                   </div>
@@ -193,18 +193,18 @@ export default function SubNavs() {
 
               <Popover className=" relative ">
                 <PopoverButton className=" focus:outline-none  ">
-                  <a class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
+                  <a className="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
                     Tienda
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="size-6 h-4 w-4"
+                      className="size-6 h-4 w-4"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </a>
@@ -219,18 +219,18 @@ export default function SubNavs() {
 
               <Popover className=" relative ">
                 <PopoverButton className="focus:outline-none">
-                  <a class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
+                  <a className="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
                     PORTFOLIO
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="size-6 h-4 w-4"
+                      className="size-6 h-4 w-4"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </a>
@@ -253,12 +253,12 @@ export default function SubNavs() {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
                           fill="currentColor"
-                          class="size-6 h-4 w-4 "
+                          className="size-6 h-4 w-4 "
                         >
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           />
                         </svg>
                       </a>
@@ -340,18 +340,18 @@ export default function SubNavs() {
               </Popover>
               <Popover className=" relative ">
                 <PopoverButton className="focus:outline-none">
-                  <a class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
+                  <a className="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
                     PAGES
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="size-6 h-4 w-4"
+                      className="size-6 h-4 w-4"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </a>
@@ -374,12 +374,12 @@ export default function SubNavs() {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
                           fill="currentColor"
-                          class="size-6 h-4 w-4 "
+                          className="size-6 h-4 w-4 "
                         >
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           />
                         </svg>
                       </a>
@@ -461,43 +461,25 @@ export default function SubNavs() {
               </Popover>
             </div>
 
-            <div class="flex items-center gap-4">
+            <div className="flex items-center gap-4">
               <SearchBar />
-              <button class="hover:text-red-dark hidden md:flex transition duration-300 relative">
+              
+              <button className="hover:text-red-dark transition duration-300 relative">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  ></path>
-                </svg>
-                <span class="absolute -top-2 -right-2 bg-red-dark text-xs text-black rounded-full h-4 w-4 flex items-center justify-center">
-                  0
-                </span>
-              </button>
-              <button class="hover:text-red-dark transition duration-300 relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   ></path>
                 </svg>
-                <span class="absolute -top-2 -right-2 bg-red-dark text-xs text-black rounded-full h-4 w-4 flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-red-dark text-xs text-black rounded-full h-4 w-4 flex items-center justify-center">
                   0
                 </span>
               </button>
