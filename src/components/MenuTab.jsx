@@ -35,61 +35,12 @@ export default function MenuTab() {
             <a href="/tienda ">VER TODO</a>
           </div>
         </TabList>
-        <TabPanels className="p-[20px]">
+        <TabPanels className="p-[20px] overflow-x-hidden">
           <TabPanel transition className="p-[15px]" key={""}>
             <div className="flex ">
               <div className="flex flex-col">
                 <div className="my-[20px]">
                   <p className="font-medium mb-[10px]">FEATURE PRODUCTS</p>
-                  <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
-                </div>
-                <CardMenu
-                  details="Camp Kids Boots"
-                  price="580.00"
-                  image={tubo}
-                  stars={3}
-                />
-                <CardMenu
-                  details="Box Plain Mat"
-                  price="154.00"
-                  image={casco}
-                  stars={4}
-                />
-                <CardMenu
-                  details="Abdes Texxtile Jacket"
-                  price="402.00"
-                  image={chaqueta}
-                  stars={5}
-                />
-              </div>
-
-              <div>
-                <div className="my-[20px]">
-                  <p className="font-medium mb-[10px]">TOP RATED PRODUCTS</p>
-                  <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
-                </div>
-                <CardMenu
-                  details="Camp Kids Boots"
-                  price="580.00"
-                  image={tubo}
-                  stars={3}
-                />
-                <CardMenu
-                  details="Box Plain Mat"
-                  price="154.00"
-                  image={casco}
-                  stars={4}
-                />
-                <CardMenu
-                  details="Abdes Texxtile Jacket"
-                  price="402.00"
-                  image={chaqueta}
-                  stars={5}
-                />
-              </div>
-              <div>
-                <div className="my-[20px]">
-                  <p className="font-medium mb-[10px]">SALE PRODUCTS</p>
                   <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
                 </div>
                 <CardMenu

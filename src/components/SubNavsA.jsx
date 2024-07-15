@@ -18,8 +18,6 @@ const navItems = [
   { name: "Home", href: "/", hasDropdown: true },
   { name: "Mega Menu", href: "/mega-menu", hasDropdown: true },
   { name: "Tienda", href: "/productos", hasDropdown: true },
-  { name: "Portfolio", href: "/portfolio", hasDropdown: true },
-  { name: "Pages", href: "/pages", hasDropdown: true },
 ];
 
 export default function SubNavs() {
@@ -64,12 +62,10 @@ export default function SubNavs() {
             <button class="md:hidden text-white ">
               <DropDown class="" client:visible />
             </button>
-
             <a href="/" class="flex justify-center md:justify-start">
               <img src="/logo.svg" alt="Logo" class="h-16" />
             </a>
-
-            <div class="hidden md:flex space-x-10">
+            <div className="flex gap-10">
               <Popover className=" ">
                 <PopoverButton>
                   <a class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
@@ -190,7 +186,6 @@ export default function SubNavs() {
                   </div>
                 </PopoverPanel>
               </Popover>
-
               <Popover className=" relative ">
                 <PopoverButton className=" focus:outline-none  ">
                   <a class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
@@ -216,291 +211,9 @@ export default function SubNavs() {
                   <MenuTab />
                 </PopoverPanel>
               </Popover>
-
-              <Popover className=" relative ">
-                <PopoverButton className="focus:outline-none">
-                  <a class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
-                    PORTFOLIO
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-6 h-4 w-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                </PopoverButton>
-                <PopoverPanel
-                  transition
-                  className=" absolute left-1/2 z-10  flex w-screen max-w-max -translate-x-1/2 px-4 transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-                >
-                  <Popover className=" bg-white pt-4  *:w-[250px] flex justify-between flex-col space-y-3 mt-[20px]  *:px-5 *:py-1.5 *:text-gray-500 ">
-                    <PopoverButton className=" focus:outline-none border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                      <a
-                        href="#"
-                        className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                      >
-                        <div>Blog</div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-6 h-4 w-4 "
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </a>
-                    </PopoverButton>
-                    <PopoverPanel
-                      transition
-                      className=" mt-[20px] pb-0 *:pb-0  *:pt-6 *:text-gray-500 bg-white flex-col absolute  top-[8px] right-[-50%] z-10  flex w-screen max-w-max -translate-x-1/2 px-4 transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-                    >
-                      <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                        <a
-                          href="#"
-                          className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                        >
-                          <div>Contact Us</div>
-                        </a>
-                      </div>
-                      <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                        <a
-                          href="#"
-                          className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                        >
-                          <div>QAs</div>
-                        </a>
-                      </div>
-                      <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                        <a
-                          href="#"
-                          className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                        >
-                          <div>404 Error</div>
-                        </a>
-                      </div>
-                    </PopoverPanel>
-
-                    <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                      <a
-                        href="#"
-                        className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                      >
-                        <div>Contact Us</div>
-                      </a>
-                    </div>
-                    <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                      <a
-                        href="#"
-                        className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                      >
-                        <div>QAs</div>
-                      </a>
-                    </div>
-                    <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                      <a
-                        href="#"
-                        className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                      >
-                        <div>404 Error</div>
-                      </a>
-                    </div>
-                  </Popover>
-                </PopoverPanel>
-              </Popover>
-              <Popover className=" relative ">
-                <PopoverButton className="focus:outline-none">
-                  <a class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
-                    PAGES
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-6 h-4 w-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                </PopoverButton>
-                <PopoverPanel
-                  transition
-                  className=" absolute left-1/2 z-10  flex w-screen max-w-max -translate-x-1/2 px-4 transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-                >
-                  <Popover className=" bg-white pt-4  *:w-[250px] flex justify-between flex-col space-y-3 mt-[20px]  *:px-5 *:py-1.5 *:text-gray-500 ">
-                    <PopoverButton className=" focus:outline-none border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                      <a
-                        href="#"
-                        className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                      >
-                        <div>Blog</div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-6 h-4 w-4 "
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </a>
-                    </PopoverButton>
-                    <PopoverPanel
-                      transition
-                      className=" mt-[20px] pb-0 *:pb-0  *:pt-6 *:text-gray-500 bg-white flex-col absolute  top-[8px] right-[-50%] z-10  flex w-screen max-w-max -translate-x-1/2 px-4 transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-                    >
-                      <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                        <a
-                          href="#"
-                          className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                        >
-                          <div>Contact Us</div>
-                        </a>
-                      </div>
-                      <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                        <a
-                          href="#"
-                          className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                        >
-                          <div>QAs</div>
-                        </a>
-                      </div>
-                      <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                        <a
-                          href="#"
-                          className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                        >
-                          <div>404 Error</div>
-                        </a>
-                      </div>
-                    </PopoverPanel>
-
-                    <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                      <a
-                        href="#"
-                        className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                      >
-                        <div>Contact Us</div>
-                      </a>
-                    </div>
-                    <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                      <a
-                        href="#"
-                        className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                      >
-                        <div>QAs</div>
-                      </a>
-                    </div>
-                    <div className="border-b-[0.5px] border-gray-300 flex justify-between items-start  text-sm *:hover:text-red-dark   ">
-                      <a
-                        href="#"
-                        className="pb-2  relative flex justify-between w-full
-                                    after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                                    after:hover:h-[100%]
-                                "
-                      >
-                        <div>404 Error</div>
-                      </a>
-                    </div>
-                  </Popover>
-                </PopoverPanel>
-              </Popover>
             </div>
-
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-10">
               <SearchBar />
-              <button class="hover:text-red-dark hidden md:flex transition duration-300 relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  ></path>
-                </svg>
-                <span class="absolute -top-2 -right-2 bg-red-dark text-xs text-black rounded-full h-4 w-4 flex items-center justify-center">
-                  0
-                </span>
-              </button>
-              <button class="hover:text-red-dark transition duration-300 relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  ></path>
-                </svg>
-                <span class="absolute -top-2 -right-2 bg-red-dark text-xs text-black rounded-full h-4 w-4 flex items-center justify-center">
-                  0
-                </span>
-              </button>
             </div>
           </div>
         </nav>
