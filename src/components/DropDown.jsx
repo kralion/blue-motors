@@ -121,7 +121,7 @@ const DropdownMenu = ({ isOpen }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className='w-[100%] left-0 absolute bg-[#00000070] top-[96px]'
+          className='w-[100%] left-0 absolute bg-gray-900 top-[96px]'
           initial="collapsed"
           animate="open"
           exit="collapsed"
