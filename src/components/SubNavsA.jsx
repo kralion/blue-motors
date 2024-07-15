@@ -1,11 +1,19 @@
-
-import React from 'react';
-import ImagMenu from './../assets/imagmenu.png';
-import { Popover, PopoverBackdrop, PopoverButton, PopoverPanel } from '@headlessui/react';
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import MenuTab from './MenuTab';
-import DropDown from './DropDown'
-import SearchBar from './common/SearchBar';
+import React from "react";
+import ImagMenu from "./../assets/imagmenu.png";
+import {
+  Popover,
+  PopoverBackdrop,
+  PopoverButton,
+  PopoverPanel,
+} from "@headlessui/react";
+import {
+  ChevronDownIcon,
+  PhoneIcon,
+  PlayCircleIcon,
+} from "@heroicons/react/20/solid";
+import MenuTab from "./MenuTab";
+import DropDown from "./DropDown";
+import SearchBar from "./common/SearchBar";
 const navItems = [
   { name: "Home", href: "/", hasDropdown: true },
   { name: "Mega Menu", href: "/mega-menu", hasDropdown: true },
@@ -17,8 +25,8 @@ const navItems = [
 export default function SubNavs() {
   return (
     <>
-      <header class='bg-[#00000070] relative z-50 '>
-        <div class="bg-[#f8f8f8] hidden md:flex">
+      <header class="bg-[#00000070] relative z-50 ">
+        <div class="bg-[#13151a] hidden md:flex">
           <div class="container mx-auto gap-1 flex py-5 text-[#a5a6a5]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +40,9 @@ export default function SubNavs() {
                 clip-rule="evenodd"
               ></path>
             </svg>
-            <span class="text-sm font-semibold">24/7 Support</span>
+            <span class="text-sm font-semibold">
+              Soporte Personalizado 24/7
+            </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -45,27 +55,19 @@ export default function SubNavs() {
                 clip-rule="evenodd"
               ></path>
             </svg>
-            <span class="text-sm font-semibold">
-              Telephone: +51 999 999 999
-            </span>
+            <span class="text-sm font-semibold">Telefono: +51 999 999 999</span>
           </div>
         </div>
 
         <nav class=" text-white p-4">
           <div class="container mx-auto flex justify-between items-center">
-          <button
-                            class="md:hidden text-white " >
-                        
-                            <DropDown class='' client:visible />
-                        </button>
+            <button class="md:hidden text-white ">
+              <DropDown class="" client:visible />
+            </button>
 
-            <div class="flex justify-center md:justify-start">
-              <img
-                src="https://demo.yolotheme.com/motor/wp-content/uploads/2016/01/logo2-e1467262875150.png"
-                alt="Logo"
-                class="h-16"
-              />
-            </div>
+            <a href="/" class="flex justify-center md:justify-start">
+              <img src="/public/logo.svg" alt="Logo" class="h-16" />
+            </a>
 
             <div class="hidden md:flex space-x-10">
               <Popover className=" ">
@@ -175,51 +177,12 @@ export default function SubNavs() {
                         </a>
                       </div>
                     </div>
-                    <div className="flex-1 mr-5 border-l-[0.5px] border-gray-300 pl-[20px] h-fit">
-                      <p className="font-bold mb-[20px]">HOMEPAGE DEMOS</p>
-                      <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
-                      <div className="flex justify-between flex-col space-y-3 mt-[20px] pl-[9px] gap-y-[20px]">
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0   after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home LookBook V1
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home LookBook V2
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home LookBook V3
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home Shop Ajax
-                        </a>
-                      </div>
-                    </div>
+
                     <div className="overflow-hidden relative top-[-50%]  ">
                       <img
-                        src={ImagMenu.src}
+                        src={
+                          "https://img.freepik.com/premium-psd/bike-motorcycle-sale-promotion-social-media-post-square-banner_252779-770.jpg?uid=R43184783&ga=GA1.1.909938681.1720628665&semt=sph"
+                        }
                         alt="Logo"
                         class="h-[110%] w-[110%]"
                       />
@@ -227,165 +190,7 @@ export default function SubNavs() {
                   </div>
                 </PopoverPanel>
               </Popover>
-              <Popover>
-                <PopoverButton className=" focus:outline-none  ">
-                  <a class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
-                    MEGA MENU
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-6 h-4 w-4"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                </PopoverButton>
-                <PopoverPanel
-                  transition
-                  className="absolute left-[50%] z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4 transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-                >
-                  <div className="overflow-hidden text-gray-500 w-[1300px] px-[50px] m-0 z-10 flex flex-wrap gap-4 py-4 bg-lighht-bg bg-white h-[330px]">
-                    <div className="flex-1 mr-5">
-                      <p className="font-bold mb-[20px]">HOMEPAGE DEMOS</p>
-                      <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
-                      <div className="flex justify-between flex-col space-y-3 mt-[20px] pl-[9px] gap-y-[20px]">
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0   after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home 1
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home 2
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home 3
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home 4
-                        </a>
-                      </div>
-                    </div>
-                    <div className="flex-1 mr-5 border-l-[0.5px] border-gray-300 pl-[20px] h-fit">
-                      <p className="font-bold mb-[20px]">HOMEPAGE DEMOS</p>
-                      <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
-                      <div className="flex justify-between flex-col space-y-3 mt-[20px] pl-[9px] gap-y-[20px]">
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0   after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home 5
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home 6
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home 7
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home Parallax
-                        </a>
-                      </div>
-                    </div>
-                    <div className="flex-1 mr-5 border-l-[0.5px] border-gray-300 pl-[20px] h-fit">
-                      <p className="font-bold mb-[20px]">HOMEPAGE DEMOS</p>
-                      <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
-                      <div className="flex justify-between flex-col space-y-3 mt-[20px] pl-[9px] gap-y-[20px]">
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0   after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home LookBook V1
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home LookBook V2
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home LookBook V3
-                        </a>
-                        <a
-                          href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
-                            after:hover:h-[100%]
-                        "
-                        >
-                          Home Shop Ajax
-                        </a>
-                      </div>
-                    </div>
-                    <div className="overflow-hidden relative top-[-50%]  ">
-                      <img
-                        src={ImagMenu.src}
-                        alt="Logo"
-                        class="h-[110%] w-[110%]"
-                      />
-                    </div>
-                  </div>
-                </PopoverPanel>
-              </Popover>
+
               <Popover className=" relative ">
                 <PopoverButton className=" focus:outline-none  ">
                   <a class="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
