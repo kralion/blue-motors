@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { XMarkIcon } from "@heroicons/react/20/solid";
 
 export default function SearchBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -138,9 +139,9 @@ export default function SearchBar() {
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-4 right-4 font-bold text-white text-5xl"
+            className="absolute top-4 right-4 font-bold text-white text-xl"
           >
-            &times;
+            <XMarkIcon className="h-6 w-6" />
           </button>
         </div>
       )}
