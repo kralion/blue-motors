@@ -38,7 +38,6 @@ const productos = await response.json();
       <div>
         {
           productos.map((item, index) => {
-            const imageUrl = extractImageUrl(item.content.rendered);
             return (
               <ProductCard
                 details={item.acf.nombre}
@@ -66,10 +65,7 @@ const productos = await response.json();
             id={item.id}
             price={item.acf.precio}
             description={item.acf.descripcion}
-            image={
-              item.acf.imageUrl ||
-              "https://img.freepik.com/premium-psd/isolated-white-sport-bike-from-left-front-view_16145-365.jpg?w=996"
-            }
+            image={item.acf.imagen_principal}
             alt={item.modelo}
           />
         ))
