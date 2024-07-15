@@ -1,7 +1,7 @@
 ---
 import rightArrow from "../assets/right.svg";
-import data from "../data/data.json";
-const { description } = Astro.props;
+const { description, features } = Astro.props;
+const featureList = features.split(",");
 ---
 
 <div class="space-y-5">
@@ -11,14 +11,14 @@ const { description } = Astro.props;
   <hr class="border-gray-800" />
   <h1 class="text-xl font-bold">Características</h1>
   <hr class="border-gray-700" />
-  <div class="grid lg:grid-cols-4 grid-cols-2 gap-4">
+  <div class="grid lg:grid-cols-3 grid-cols-2 gap-4">
     {
-      data.detallesMotocicleta.caracteristicas.map((feature) => (
+      featureList.map((feature) => (
         <div class="flex items-center gap-2">
           <img src={rightArrow.src} alt="icon" width="15" height="15" />
           <span class="text-sm">{feature}</span>
         </div>
       ))
-    },
+    }
   </div>
 </div>

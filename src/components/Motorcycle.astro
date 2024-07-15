@@ -1,16 +1,5 @@
 ---
-const {
-  name,
-  description,
-  imageUrl,
-  price,
-  category,
-  mileage,
-  engine,
-  year,
-  color,
-  vin,
-} = Astro.props;
+const { motorcycle } = Astro.props;
 import exchange from "../assets/exchange.svg";
 import money from "../assets/money.svg";
 import phone from "../assets/phone.svg";
@@ -40,35 +29,35 @@ function switchTab(index) {
       >
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Tipo:</span>
-          {category}
+          {motorcycle.tipo}
         </div>
         <hr class="border-gray-700" />
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Kilometraje:</span>
-          {mileage}
+          {motorcycle.kilometraje}
         </div>
         <hr class="border-gray-700" />
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Motor:</span>
-          {engine.slice(0, 20)}...
+          {motorcycle.motor.slice(0, 20)}...
         </div>
         <hr class="border-gray-700" />
 
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Año:</span>
-          {year}
+          {motorcycle.anio}
         </div>
         <hr class="border-gray-700" />
 
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Color:</span>
-          {color}
+          {motorcycle.color}
         </div>
         <hr class="border-gray-700" />
 
         <div class="flex justify-between">
           <span class="text-gray-400">VIN:</span>
-          {vin.slice(0, 8)}...
+          {motorcycle.vin}...
         </div>
       </div>
       <div class="mt-4 bg-light-bg">
@@ -128,7 +117,7 @@ function switchTab(index) {
     >
       <div class="flex flex-col gap-1">
         <span class="text-gray-400">VIN:</span>
-        <span class="font-mono"> {vin}</span>
+        <span class="font-mono"> {motorcycle.vin}</span>
       </div>
       <button
         class="bg-red-dark py-3 hover:opacity-50 rounded-sm uppercase text-xs w-full font-bold"
@@ -142,10 +131,10 @@ function switchTab(index) {
     <div class="flex justify-between items-center lg:px-0 px-4">
       <div class="flex justify-items-start flex-col md:w-1/2">
         <h4 class="text-gray-400 uppercase text-xs lg:text-sm font-semibold">
-          {category}
+          {motorcycle.tipo}
         </h4>
         <h1 class="lg:text-3xl text-xl font-bold r">
-          {name}
+          {motorcycle.nombre}
         </h1>
       </div>
       <div
@@ -153,12 +142,16 @@ function switchTab(index) {
       >
         <h5 class="text-white/60 lg:text-sm text-xs">Nuestro Precio</h5>
         <h1 class="lg:text-xl font-bold">
-          ${price.toLocaleString()}
+          ${motorcycle.precio.toLocaleString()}
         </h1>
       </div>
     </div>
     <hr class="border-gray-500" />
-    <img src={imageUrl} alt={name} class="w-full" />
+    <img
+      src={motorcycle.imagen_principal}
+      alt="imagen principal"
+      class="w-full"
+    />
 
     <div class="flex flex-col">
       <div class="flex lg:w-full overflow-x-auto lg:overflow-x-hidden">
@@ -192,7 +185,10 @@ function switchTab(index) {
         id="tab-0"
         class="tab-content p-4 animate__animated animate__fadeInUp animate__faster"
       >
-        <Overview description={description} />
+        <Overview
+          description={motorcycle.descripcion}
+          features={motorcycle.caracteristicas}
+        />
       </div>
       <div
         id="tab-1"
@@ -204,7 +200,7 @@ function switchTab(index) {
         id="tab-2"
         class="tab-content p-4 hidden animate__animated animate__fadeInUp animate__faster"
       >
-        <Gallery />
+        <Gallery motorcycle={motorcycle} />
       </div>
       <div
         id="tab-3"

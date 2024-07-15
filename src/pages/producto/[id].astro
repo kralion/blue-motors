@@ -22,20 +22,6 @@ const producto = await response.json();
 
 <Layout title={`BlueMotors - ${producto.acf.nombre}`}>
   <main class="mx-auto max-w-6xl lg:py-20 py-10 lg:px-8">
-    <Motorcycle
-      name={producto.acf.nombre || "Motocicleta"}
-      description={producto.acf.descripcion ||
-        "Motocicleta gama media con un rendimiento de carreras"}
-      imageUrl={producto.acf.imageUrl ||
-        "https://img.freepik.com/premium-psd/isolated-white-sport-bike-from-left-front-view_16145-365.jpg?w=996"}
-      price={producto.acf.precio || 10000}
-      category="Motocicleta"
-      mileage={producto.acf.descripcion || "100,000 km"}
-      engine={producto.acf.descripcion ||
-        "4 tiempos, refrigerado por líquido, DOHC, Paralelo Doble"}
-      year="2022"
-      color={producto.tipoModelo || "Rojo"}
-      vin={producto.numeroVin || "JVAVP27E6BA013536"}
-    />
+    <Motorcycle motorcycle={producto.acf} />
   </main>
-</Layout>; ---
+</Layout>;
