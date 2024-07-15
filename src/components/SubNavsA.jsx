@@ -66,7 +66,7 @@ export default function SubNavs() {
             </button>
 
             <a href="/" class="flex justify-center md:justify-start">
-              <img src="/public/logo.svg" alt="Logo" class="h-16" />
+              <img src="/logo.svg" alt="Logo" class="h-16" />
             </a>
 
             <div class="hidden md:flex space-x-10">
