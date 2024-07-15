@@ -2,19 +2,22 @@ import { useState, useEffect } from "react";
 import data from "../../data/data.json";
 
 export default function SearchBar() {
-
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState("");
     const [searchResult, setSearchResult] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSearch = async () => {
         if (search.trim() !== "") {
-            try{
+            setIsLoading(true);
+            try {
                 const response = await fetch(`https://bluemotorsec.com/wp-json/wp/v2/productos-tienda?search=${search}`);
                 const results = await response.json();
                 setSearchResult(results);
-            }catch(error){
+            } catch (error) {
                 console.log("Error fetching data: ", error);
+            } finally {
+                setIsLoading(false);
             }
         } else {
             setSearchResult([]);
@@ -30,14 +33,11 @@ export default function SearchBar() {
         }
     }, [isOpen]);
 
-
-
     return (
         <>
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="hover:text-red-dark"
-
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ export default function SearchBar() {
                                 onChange={e => setSearch(e.target.value)}
                                 className="w-full bg-transparent border-b border-white text-white text-xl py-2 pr-10 pl-4 focus:outline-none"
                             />
-                            <button 
+                            <button
                                 onClick={handleSearch}
                                 className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white"
                             >
@@ -74,9 +74,12 @@ export default function SearchBar() {
                                 </svg>
                             </button>
                         </div>
-                        
-                       
-                        {searchResult.length > 0 && (
+
+                        {isLoading && (
+                            <p className="text-white font-bold mt-4">Buscando...</p>
+                        )}
+
+                        {!isLoading && searchResult.length > 0 && (
                             <div className="mt-4">
                                 {searchResult.map((producto, index) => (
                                     <a href={`/producto/${producto.id}`} key={index}>
