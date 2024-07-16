@@ -1,18 +1,6 @@
-import React from "react";
-import ImagMenu from "./../assets/imagmenu.png";
-import {
-  Popover,
-  PopoverBackdrop,
-  PopoverButton,
-  PopoverPanel,
-} from "@headlessui/react";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
-import MenuTab from "./MenuTab";
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import DropDown from "./DropDown";
+import MenuTab from "./MenuTab";
 import SearchBar from "./common/SearchBar";
 const navItems = [
   { name: "Home", href: "/", hasDropdown: true },
@@ -23,14 +11,14 @@ const navItems = [
 export default function SubNavs() {
   return (
     <>
-      <div className="bg-gray-900 relative z-50 ">
+      <div className="bg-bg relative z-50 ">
         <div className="bg-[#13151a] hidden md:flex">
           <div className="container mx-auto gap-1 flex py-5 text-[#a5a6a5]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="size-6 h-5 w-5 text-red-dark"
+              className="size-6 h-5 w-5 text-primary"
             >
               <path
                 fillRule="evenodd"
@@ -45,7 +33,7 @@ export default function SubNavs() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="size-6 h-5 w-5 ml-4 text-red-dark"
+              className="size-6 h-5 w-5 ml-4 text-primary"
             >
               <path
                 fillRule="evenodd"
@@ -65,14 +53,14 @@ export default function SubNavs() {
               <DropDown className="" client:visible />
             </button>
 
-            <a href="/" className="flex justify-center md:justify-start">
-              <img src="/logo.svg" alt="Logo" className="h-16" />
+            <a href="/">
+              <img src="/logo.jpeg" alt="Logo" className="w-36 h-24" />
             </a>
 
             <div className="hidden md:flex space-x-10">
               <Popover className=" ">
                 <PopoverButton>
-                  <a className="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
+                  <a className="hover:text-primary transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
                     HOME
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -95,12 +83,12 @@ export default function SubNavs() {
                   <div className="overflow-hidden text-gray-500 w-[1200px] px-[50px] m-0 mt-4 z-10 flex flex-wrap gap-4 py-4 bg-lighht-bg bg-white h-[330px]">
                     <div className="flex-1 ">
                       <p className="font-bold mb-[20px]">HOMEPAGE DEMOS</p>
-                      <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
+                      <div className="h-[2px] w-[20%] rounded-xl bg-primary"></div>
                       <div className="flex justify-between flex-col space-y-3 mt-[20px] pl-[9px] gap-y-[20px]">
                         <a
                           href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0   after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
+                          className=" relative hover:text-primary
+                            after:content-[''] after:bg-primary after:h-[0%] after:w-[3px] after:bottom-0   after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
                             after:hover:h-[100%]
                         "
                         >
@@ -108,8 +96,8 @@ export default function SubNavs() {
                         </a>
                         <a
                           href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
+                          className=" relative hover:text-primary
+                            after:content-[''] after:bg-primary after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
                             after:hover:h-[100%]
                         "
                         >
@@ -117,8 +105,8 @@ export default function SubNavs() {
                         </a>
                         <a
                           href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
+                          className=" relative hover:text-primary
+                            after:content-[''] after:bg-primary after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
                             after:hover:h-[100%]
                         "
                         >
@@ -126,8 +114,8 @@ export default function SubNavs() {
                         </a>
                         <a
                           href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
+                          className=" relative hover:text-primary
+                            after:content-[''] after:bg-primary after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
                             after:hover:h-[100%]
                         "
                         >
@@ -137,12 +125,12 @@ export default function SubNavs() {
                     </div>
                     <div className="flex-1 mr-5 border-l-[0.5px] border-gray-300 pl-[20px] h-fit">
                       <p className="font-bold mb-[20px]">HOMEPAGE DEMOS</p>
-                      <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
+                      <div className="h-[2px] w-[20%] rounded-xl bg-primary"></div>
                       <div className="flex justify-between flex-col space-y-3 mt-[20px] pl-[9px] gap-y-[20px]">
                         <a
                           href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0   after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
+                          className=" relative hover:text-primary
+                            after:content-[''] after:bg-primary after:h-[0%] after:w-[3px] after:bottom-0   after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
                             after:hover:h-[100%]
                         "
                         >
@@ -150,8 +138,8 @@ export default function SubNavs() {
                         </a>
                         <a
                           href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
+                          className=" relative hover:text-primary
+                            after:content-[''] after:bg-primary after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
                             after:hover:h-[100%]
                         "
                         >
@@ -159,8 +147,8 @@ export default function SubNavs() {
                         </a>
                         <a
                           href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
+                          className=" relative hover:text-primary
+                            after:content-[''] after:bg-primary after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
                             after:hover:h-[100%]
                         "
                         >
@@ -168,8 +156,8 @@ export default function SubNavs() {
                         </a>
                         <a
                           href="#"
-                          className=" relative hover:text-red-dark
-                            after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
+                          className=" relative hover:text-primary
+                            after:content-[''] after:bg-primary after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
                             after:hover:h-[100%]
                         "
                         >
@@ -192,7 +180,7 @@ export default function SubNavs() {
               </Popover>
               <Popover className=" relative ">
                 <PopoverButton className=" focus:outline-none  ">
-                  <a className="hover:text-red-dark transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
+                  <a className="hover:text-primary transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
                     Tienda
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -6,7 +6,7 @@ export const CardMenu = ({ details, stars, price, image }) => {
     <a
       href={hrefUrl}
       className="relative
-                        after:content-[''] after:bg-red-dark after:h-[0%] after:w-[3px] after:bottom-[10%] after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
+                        after:content-[''] after:bg-primary after:h-[0%] after:w-[3px] after:bottom-[10%] after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
                         after:hover:h-[80%]
     hover:cursor-pointer px-8 py-6 font-medium text-gray-800 w-fit flex items-center gap-x-10 border-b-[1px] border-gray-200"
     >
@@ -14,7 +14,7 @@ export const CardMenu = ({ details, stars, price, image }) => {
         <img src={image.src} alt="Logo" className="h-20 w-20" />
       </div>
       <div className="p-[5px]">
-        <div className="details hover:text-red-dark ">{details}</div>
+        <div className="details hover:text-primary ">{details}</div>
         <div className="relative ">
           <div className=" absolute stars w-fit flex gap-x-1 justify-between  ">
             {[...Array(stars)].map((_, index) => (

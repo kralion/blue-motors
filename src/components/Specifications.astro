@@ -1,41 +1,89 @@
 ---
-import specifications from "../data/data.json";
+const { motorcycle } = Astro.props;
+const dimensionsList = motorcycle.dimensiones.split(",");
+const motorList = motorcycle.caracteristicas_motor.split(",");
 ---
 
 <div class="space-y-2">
-  <h1 class="text-xl font-bold my-4">
-    {specifications.detallesMotocicleta.modelo}
-  </h1>
+  <h1 class="text-xl font-bold my-4">Generales</h1>
   <hr class="border-gray-700" />
   <div class="flex items-center justify-between">
-    <span class="text-white/50 uppercase text-xs"> Ubicacion</span>
-    <span class="font-bold">
-      {specifications.detallesMotocicleta.ubicacion}</span
-    >
+    <span class="text-white/50 uppercase text-xs"> Modelo</span>
+    <span class="font-bold"> {motorcycle.modelo}</span>
+  </div>
+  <hr class="border-gray-700" />
+  <div class="flex items-center justify-between">
+    <span class="text-white/50 uppercase text-xs"> Marca</span>
+    <span class="font-bold"> {motorcycle.marca}</span>
+  </div>
+  <hr class="border-gray-700" />
+  <div class="flex items-center justify-between">
+    <span class="text-white/50 uppercase text-xs"> Año</span>
+    <span class="font-bold"> {motorcycle.anio}</span>
   </div>
   <hr class="border-gray-700" />
   <div class="pt-10">
-    <h1 class="text-xl font-bold">Performance</h1>
+    <h1 class="text-xl font-bold">Dimensiones</h1>
   </div>
-  {
-    specifications.detallesMotocicleta.rendimiento.map((rendimiento) => (
-      <>
-        <hr class="border-gray-700" />
-        <div class="flex lg:items-center lg:justify-between gap-3 lg:gap-0 lg:flex-row flex-col">
-          <span class="text-white/50 uppercase text-xs"> Motor</span>
-          <span class="font-bold text-sm">{rendimiento.motor}</span>
-        </div>
-        <hr class="border-gray-700" />
-        <div class="flex items-center justify-between">
-          <span class="text-white/50 uppercase text-xs"> Desplazamiento</span>
-          <span class="font-bold text-sm">{rendimiento.desplazamiento}</span>
-        </div>
-        <hr class="border-gray-700" />
-        <div class="flex items-center justify-between">
-          <span class="text-white/50 uppercase text-xs">Carrera</span>
-          <span class="font-bold text-sm">{rendimiento.carrera}</span>
-        </div>
-      </>
-    ))
-  }
+  <hr class="border-gray-700" />
+  <div
+    class="flex lg:items-center lg:justify-between gap-3 lg:gap-0 lg:flex-row flex-col"
+  >
+    <span class="text-white/50 uppercase text-xs">Largo</span>
+    <span class="font-bold text-sm">{dimensionsList[0]} metros</span>
+  </div>
+  <hr class="border-gray-700" />
+  <div
+    class="flex lg:items-center lg:justify-between gap-3 lg:gap-0 lg:flex-row flex-col"
+  >
+    <span class="text-white/50 uppercase text-xs">Ancho</span>
+    <span class="font-bold text-sm">{dimensionsList[1]} metros</span>
+  </div>
+  <hr class="border-gray-700" />
+  <div
+    class="flex lg:items-center lg:justify-between gap-3 lg:gap-0 lg:flex-row flex-col"
+  >
+    <span class="text-white/50 uppercase text-xs">Altura</span>
+    <span class="font-bold text-sm">{dimensionsList[2]} metros</span>
+  </div>
+  <hr class="border-gray-700" />
+  <div
+    class="flex lg:items-center lg:justify-between gap-3 lg:gap-0 lg:flex-row flex-col"
+  >
+    <span class="text-white/50 uppercase text-xs">Peso</span>
+    <span class="font-bold text-sm">{dimensionsList[3]} KG.</span>
+  </div>
+  <div class="pt-10">
+    <h1 class="text-xl font-bold">Motor</h1>
+  </div>
+  <hr class="border-gray-700" />
+  <div
+    class="flex lg:items-center lg:justify-between gap-3 lg:gap-0 lg:flex-row flex-col"
+  >
+    <span class="text-white/50 uppercase text-xs"> Tipo</span>
+    <span class="font-bold text-sm">{motorList[0]}</span>
+  </div>
+  <hr class="border-gray-700" />
+  <div
+    class="flex lg:items-center lg:justify-between gap-3 lg:gap-0 lg:flex-row flex-col"
+  >
+    <span class="text-white/50 uppercase text-xs"> Cilindrada</span>
+    <span class="font-bold text-sm">{motorList[1]} cc.</span>
+  </div>
+  <hr class="border-gray-700" />
+  <div
+    class="flex lg:items-center lg:justify-between gap-3 lg:gap-0 lg:flex-row flex-col"
+  >
+    <span class="text-white/50 uppercase text-xs">Capacidad del tanque</span>
+    <span class="font-bold text-sm">{motorList[2]} litros</span>
+  </div>
+  <hr class="border-gray-700" />
+  <div
+    class="flex lg:items-center lg:justify-between gap-3 lg:gap-0 lg:flex-row flex-col"
+  >
+    <span class="text-white/50 uppercase text-xs">
+      Sistema de Refrigeración</span
+    >
+    <span class="font-bold text-sm">{motorList[3]}</span>
+  </div>
 </div>

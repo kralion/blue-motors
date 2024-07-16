@@ -11,7 +11,7 @@ export default function MenuTab() {
       <TabGroup className="bg-white text-gray-500 flex ">
         <TabList className="flex flex-col border-r-[1px] border-gray-200 *:py-[15px] *:pl-[20px] *:pr-[100px]">
           <Tab
-            className="data-[selected]:text-red-dark  w-72 data-[selected]:font-medium
+            className="data-[selected]:text-primary  w-72 data-[selected]:font-medium
                     focus:outline-none
                     "
             key={"uno"}
@@ -19,7 +19,7 @@ export default function MenuTab() {
             MAS VENDIDOS
           </Tab>
           <Tab
-            className="data-[selected]:text-red-dark w-72 data-[selected]:font-medium
+            className="data-[selected]:text-primary w-72 data-[selected]:font-medium
                     focus:outline-none
                     "
             key={"dos"}
@@ -27,8 +27,8 @@ export default function MenuTab() {
             FUERA DE STOCK
           </Tab>
           <div
-            className="data-[selected]:text-red-dark w-64 ml-2 data-[selected]:font-medium
-                    focus:outline-none hover:text-red-dark
+            className="data-[selected]:text-primary w-64 ml-2 data-[selected]:font-medium
+                    focus:outline-none hover:text-primary
                     "
             key={"tres"}
           >
@@ -41,7 +41,7 @@ export default function MenuTab() {
               <div className="flex flex-col">
                 <div className="my-[20px]">
                   <p className="font-medium mb-[10px]">FEATURE PRODUCTS</p>
-                  <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
+                  <div className="h-[2px] w-[20%] rounded-xl bg-primary"></div>
                 </div>
                 <CardMenu
                   details="Camp Kids Boots"
@@ -70,7 +70,7 @@ export default function MenuTab() {
               <div className="flex flex-col">
                 <div className="my-[20px]">
                   <p className="font-medium mb-[10px]">PRODUCTS</p>
-                  <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
+                  <div className="h-[2px] w-[20%] rounded-xl bg-primary"></div>
                 </div>
                 <CardMenu
                   details="Camp Kids Boots"
@@ -95,7 +95,7 @@ export default function MenuTab() {
               <div>
                 <div className="my-[20px]">
                   <p className="font-medium mb-[10px]">SALE OFF</p>
-                  <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
+                  <div className="h-[2px] w-[20%] rounded-xl bg-primary"></div>
                 </div>
                 <CardMenu
                   details="Camp Kids Boots"
@@ -119,7 +119,7 @@ export default function MenuTab() {
               <div>
                 <div className="my-[20px]">
                   <p className="font-medium mb-[10px]">SALE TAGS</p>
-                  <div className="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
+                  <div className="h-[2px] w-[20%] rounded-xl bg-primary"></div>
                 </div>
                 <CardMenu
                   details="Camp Kids Boots"

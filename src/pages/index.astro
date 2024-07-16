@@ -22,7 +22,7 @@ const productos = await response.json();
       </h1>
       <div>
         <button
-          class="bg-red-dark py-4 px-8 text-white text-center text-[20px] hover:opacity-70"
+          class="bg-primary py-4 px-8 text-white text-center text-[20px] hover:opacity-70"
         >
           <a href="/tienda">Ver Tienda</a>
         </button>
@@ -40,7 +40,7 @@ const productos = await response.json();
     <div>
       <div class="my-[20px] lg:pl-8 pl-4">
         <p class="font-medium mb-[10px] text-white">TOP RATED PRODUCTS</p>
-        <div class="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
+        <div class="h-[2px] w-[20%] rounded-xl bg-primary"></div>
       </div>
       <div>
         {
@@ -63,7 +63,7 @@ const productos = await response.json();
     <div>
       <div class="my-[20px] lg:pl-8 pl-4">
         <p class="font-medium mb-[10px] text-white">SALE PRODUCTS</p>
-        <div class="h-[2px] w-[20%] rounded-xl bg-red-dark"></div>
+        <div class="h-[2px] w-[20%] rounded-xl bg-primary"></div>
       </div>
       {
         productos.map((item, index) => (

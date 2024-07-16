@@ -4,8 +4,10 @@ export default {
 	theme: {
 		extend: {
 			colors : {
-				'red-dark': '#DF1D01',
-				'light-bg': "#202B31"
+				'primary': '#0543ba',
+				'secondary': '#fffff',
+				'border': '#b4b3af',
+				'bg': '#010101',
 			},
 			fontFamily: {
 				'sans': ['Orbitron', 'sans-serif'],

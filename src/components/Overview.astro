@@ -1,24 +1,44 @@
 ---
 import rightArrow from "../assets/right.svg";
-const { description, features } = Astro.props;
+import { SwatchIcon } from "@heroicons/react/20/solid";
+const { description, features, colores } = Astro.props;
 const featureList = features.split(",");
+const coloresList = colores.split(",");
 ---
 
-<div class="space-y-5">
-  <h1 class="text-xl font-bold">Un vistazo general</h1>
-  <hr class="border-gray-700" />
-  <p class="text-xs">{description}</p>
-  <hr class="border-gray-800" />
-  <h1 class="text-xl font-bold">Características</h1>
-  <hr class="border-gray-700" />
-  <div class="grid lg:grid-cols-3 grid-cols-2 gap-4">
-    {
-      featureList.map((feature) => (
-        <div class="flex items-center gap-2">
-          <img src={rightArrow.src} alt="icon" width="15" height="15" />
-          <span class="text-sm">{feature}</span>
-        </div>
-      ))
-    }
+<div class="space-y-10 mt-3">
+  <div class="space-y-5">
+    <h1 class="text-xl font-bold">Un vistazo general</h1>
+    <hr class="border-gray-700" />
+    <p class="text-xs">{description}</p>
+    <hr class="border-gray-800" />
+  </div>
+  <div class="space-y-5">
+    <h1 class="text-xl font-bold">Características</h1>
+    <hr class="border-gray-700" />
+    <div class="grid lg:grid-cols-3 grid-cols-2 gap-4">
+      {
+        featureList.map((feature) => (
+          <div class="flex items-center gap-2">
+            <img src={rightArrow.src} alt="icon" width="15" height="15" />
+            <span class="text-sm">{feature}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class="space-y-5">
+    <h1 class="text-xl font-bold">Colores</h1>
+    <hr class="border-gray-700" />
+    <div class="space-y-4">
+      {
+        coloresList.map((feature) => (
+          <div class="flex items-center gap-2">
+            <SwatchIcon className="w-5 h-5" />
+            <span class="text-sm">{feature}</span>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </div>

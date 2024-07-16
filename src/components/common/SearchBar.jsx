@@ -37,10 +37,7 @@ export default function SearchBar() {
 
   return (
     <>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="hover:text-red-dark"
-      >
+      <button onClick={() => setIsOpen(!isOpen)} className="hover:text-primary">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
@@ -58,7 +55,7 @@ export default function SearchBar() {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-bg bg-opacity-95 z-50 flex items-center justify-center">
           <div className="w-full max-w-7xl px-4">
             <div className="relative">
               <input

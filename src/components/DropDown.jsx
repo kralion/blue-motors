@@ -75,14 +75,14 @@ const MenuItem = ({ label, children, route }) => {
 
   return (
     <div>
-      <div className="box-border px-5 flex items-center relative h-[60px] border-b-gray-600 border-b-[1px] hover:text-red-dark hover:bg-gray-900 transition ease-in-out delay-100">
+      <div className="box-border px-5 flex items-center relative h-[60px] border-b-gray-600 border-b-[1px] hover:text-primary hover:bg-gray-900 transition ease-in-out delay-100">
         <a href={route}>{label}</a>
         {children && (
           <span style={{ marginLeft: "auto" }}>
             <svg
               onClick={toggleSubMenu}
               style={{ cursor: "pointer" }}
-              className="fill-white rotate-45 hover:rotate-[-315deg] hover:fill-red-dark transition  ease-out delay-300"
+              className="fill-white rotate-45 hover:rotate-[-315deg] hover:fill-primary transition  ease-out delay-300"
               xmlns="http://www.w3.org/2000/svg"
               id="arrow-circle-down"
               viewBox="0 0 24 24"
@@ -111,7 +111,7 @@ const MenuItem = ({ label, children, route }) => {
               {Array.isArray(children)
                 ? children.map((child, index) => (
                     <React.Fragment key={index}>
-                      <div className="box-border px-5 w-full h-[60px] flex items-center bg-gray-700 border-b-gray-600 border-b-[.5px] hover:text-red-dark transition ease-in-out delay-150">
+                      <div className="box-border px-5 w-full h-[60px] flex items-center bg-gray-700 border-b-gray-600 border-b-[.5px] hover:text-primary transition ease-in-out delay-150">
                         {child}
                       </div>
                     </React.Fragment>

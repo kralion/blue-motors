@@ -1,45 +1,41 @@
 ---
+export const prerender = false;
 const { motorcycle } = Astro.props;
-import exchange from "../assets/exchange.svg";
-import money from "../assets/money.svg";
-import phone from "../assets/phone.svg";
 import "animate.css";
+import phone from "../assets/phone.svg";
 import share from "../assets/share.svg";
+import ContactForm from "./Form";
+import Gallery from "./Gallery.astro";
 import Overview from "./Overview.astro";
 import Specifications from "./Specifications.astro";
-import Gallery from "./Gallery.astro";
-import Contact from "./Contact.astro";
 let currentTab = 0;
 
 function switchTab(index) {
   currentTab = index;
 }
+const motorList = motorcycle.caracteristicas_motor.split(",");
 ---
 
 <div
   class="text-white shadow-lg overflow-hidden flex lg:flex-row gap-7 flex-col-reverse"
 >
   <div
-    class="flex flex-col gap-4 md:w-1/3 animate__animated animate__fadeIn animate__faste"
+    class="flex flex-col gap-4 md:w-1/3 animate__animated animate__fadeInLeft animate__faster"
   >
     <div>
       {/* Specifications */}
       <div
-        class="space-y-3 gap-2 text-sm mb-4 p-6 bg-light-bg border-t-4 border-red-dark"
+        class="space-y-3 gap-2 text-sm mb-4 p-6 bg-light-bg border-t-4 border-b-4 border-border"
       >
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Tipo:</span>
-          {motorcycle.tipo}
+          {motorcycle.categoria}
         </div>
-        <hr class="border-gray-700" />
-        <div class="flex justify-between">
-          <span class="text-gray-400 uppercase text-xs">Kilometraje:</span>
-          {motorcycle.kilometraje}
-        </div>
+
         <hr class="border-gray-700" />
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Motor:</span>
-          {motorcycle.motor.slice(0, 20)}...
+          {motorList[0]}
         </div>
         <hr class="border-gray-700" />
 
@@ -50,19 +46,22 @@ function switchTab(index) {
         <hr class="border-gray-700" />
 
         <div class="flex justify-between">
-          <span class="text-gray-400 uppercase text-xs">Color:</span>
-          {motorcycle.color}
+          <span class="text-gray-400 uppercase text-xs">Colores:</span>
+          {motorcycle.colores.split(",").join(", ")}
         </div>
         <hr class="border-gray-700" />
 
         <div class="flex justify-between">
           <span class="text-gray-400">VIN:</span>
-          {motorcycle.vin}...
+          {motorcycle.vin.slice(0, 10)}...
         </div>
       </div>
       <div class="mt-4 bg-light-bg">
-        <button
-          class="hover:bg-red-dark w-full text-white py-3 flex items-center gap-4 px-4 transition duration-300 ease-in-out"
+        <!-- TODO: Change to the STORE phone number -->
+        <a
+          href="https://wa.me/+51958455485?text=Hola, quiero reservar un coche motorizado"
+          target="_blank"
+          class="hover:bg-primary w-full text-white py-3 flex items-center gap-4 px-4 transition duration-300 ease-in-out"
         >
           <img
             src={phone.src}
@@ -72,33 +71,11 @@ function switchTab(index) {
             class="invert"
           />
           Reservar una cita
-        </button>
+        </a>
+
         <button
-          class="hover:bg-red-dark w-full text-white py-3 flex items-center gap-4 px-4 transition duration-300 ease-in-out"
-        >
-          <img
-            src={exchange.src}
-            alt="icon"
-            width="20"
-            height="20"
-            class="invert"
-          />
-          Intercambio
-        </button>
-        <button
-          class="hover:bg-red-dark w-full text-white py-3 flex items-center gap-4 px-4 transition duration-300 ease-in-out"
-        >
-          <img
-            src={money.src}
-            alt="icon"
-            width="20"
-            height="20"
-            class="invert"
-          />
-          Calcular presupuesto
-        </button>
-        <button
-          class="hover:bg-red-dark w-full text-white py-3 flex items-center gap-4 px-4 transition duration-300 ease-in-out"
+          class="hover:bg-primary w-full text-white py-3 flex items-center gap-4 px-4 transition duration-300 ease-in-out"
+          id="copyUrlBtn"
         >
           <img
             src={share.src}
@@ -113,14 +90,14 @@ function switchTab(index) {
     </div>
 
     <div
-      class="space-y-3 gap-2 text-sm p-4 bg-light-bg border-t-4 border-red-dark"
+      class="space-y-3 gap-2 text-sm p-4 bg-light-bg border-t-4 border-border"
     >
       <div class="flex flex-col gap-1">
         <span class="text-gray-400">VIN:</span>
         <span class="font-mono"> {motorcycle.vin}</span>
       </div>
       <button
-        class="bg-red-dark py-3 hover:opacity-50 rounded-sm uppercase text-xs w-full font-bold"
+        class="bg-primary py-3 hover:opacity-50 rounded-sm uppercase text-xs w-full font-bold"
       >
         Ver VIN
       </button>
@@ -131,14 +108,14 @@ function switchTab(index) {
     <div class="flex justify-between items-center lg:px-0 px-4">
       <div class="flex justify-items-start flex-col md:w-1/2">
         <h4 class="text-gray-400 uppercase text-xs lg:text-sm font-semibold">
-          {motorcycle.tipo}
+          {motorcycle.categoria}
         </h4>
         <h1 class="lg:text-3xl text-xl font-bold r">
           {motorcycle.nombre}
         </h1>
       </div>
       <div
-        class="flex justify-items-end py-2 flex-col px-5 text-right bg-red-dark w-fit"
+        class="flex justify-items-end py-2 flex-col px-5 text-right bg-primary w-fit"
       >
         <h5 class="text-white/60 lg:text-sm text-xs">Nuestro Precio</h5>
         <h1 class="lg:text-xl font-bold">
@@ -147,34 +124,32 @@ function switchTab(index) {
       </div>
     </div>
     <hr class="border-gray-500" />
-    <img
-      src={motorcycle.imagen_principal}
-      alt="imagen principal"
-      class="w-full"
-    />
+    <div class="animate__animated animate__fadeInUp animate__faster">
+      <img src={motorcycle.imagen_principal} alt="imagen principal" />
+    </div>
 
     <div class="flex flex-col">
       <div class="flex lg:w-full overflow-x-auto lg:overflow-x-hidden">
         <button
-          class="tab-btn p-4 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase text-xs w-full font-bold min-w-36 focus:border-red-dark bg-red-dark flex justify-center items-center"
+          class="tab-btn p-4 focus:bg-light-bg focus:border-t-2 focus:border-t-primary uppercase text-xs w-full font-bold min-w-36 focus:border-border focus:bg-bg bg-primary flex justify-center items-center"
           data-tab="0"
         >
           Vista General
         </button>
         <button
-          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase w-full lg:text-xs min-w-36 text-[0.7rem] font-bold focus:border-red-dark bg-red-dark flex justify-center items-center"
+          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-primary uppercase w-full lg:text-xs min-w-36 text-[0.7rem] focus:bg-bg font-bold focus:border-border bg-primary flex justify-center items-center"
           data-tab="1"
         >
           Especificaciones
         </button>
         <button
-          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase min-w-44 w-full focus:border-red-dark bg-red-dark text-xs font-bold flex justify-center items-center"
+          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-primary uppercase focus:bg-bg min-w-44 w-full focus:border-border bg-primary text-xs font-bold flex justify-center items-center"
           data-tab="2"
         >
           Galería de Imágenes
         </button>
         <button
-          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-red-dark uppercase min-w-36 w-full focus:border-red-dark bg-red-dark text-xs font-bold flex justify-center items-center"
+          class="tab-btn px-4 py-2 focus:bg-light-bg focus:border-t-2 focus:border-t-primary focus:bg-bg uppercase min-w-36 w-full focus:border-border bg-primary text-xs font-bold flex justify-center items-center"
           data-tab="3"
         >
           Contáctanos
@@ -187,14 +162,15 @@ function switchTab(index) {
       >
         <Overview
           description={motorcycle.descripcion}
-          features={motorcycle.caracteristicas}
+          features={motorcycle.caracteristicas_principales}
+          colores={motorcycle.colores}
         />
       </div>
       <div
         id="tab-1"
         class="tab-content p-4 hidden animate__animated animate__fadeInUp animate__faster"
       >
-        <Specifications />
+        <Specifications motorcycle={motorcycle} />
       </div>
       <div
         id="tab-2"
@@ -206,7 +182,7 @@ function switchTab(index) {
         id="tab-3"
         class="tab-content p-4 hidden animate__animated animate__fadeInUp animate__faster"
       >
-        <Contact />
+        <ContactForm client:load />
       </div>
     </div>
   </div>
@@ -227,10 +203,21 @@ function switchTab(index) {
       document.getElementById(`tab-${targetTab}`).classList.remove("hidden");
 
       // Remove active class from all tabs
-      tabs.forEach((t) => t.classList.remove("border-b-0", "border-light-bg"));
+      tabs.forEach((t) => t.classList.remove("border-b-0", "border-border"));
 
       // Add active class to the selected tab
-      tab.classList.add("border-b-0", "border-light-bg");
+      tab.classList.add("border-b-0", "border-border");
     });
+  });
+  const copyUrlBtn = document.querySelector("#copyUrlBtn");
+  copyUrlBtn.addEventListener("click", () => {
+    navigator.clipboard
+      .writeText(window.location.href)
+      .then(() => {
+        alert("URL copiada con éxito!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy URL: ", err);
+      });
   });
 </script>
