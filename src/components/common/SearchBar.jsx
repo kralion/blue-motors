@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { XMarkIcon } from "@heroicons/react/20/solid";
+import { CheckCircleIcon, XMarkIcon } from "@heroicons/react/20/solid";
 
 export default function SearchBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,9 +60,9 @@ export default function SearchBar() {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Empieza por buscar un modelo"
+                placeholder="Buscar un modelo ..."
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-transparent border-b border-white text-white text-xl py-2 pr-10 pl-4 focus:outline-none"
+                className="w-full bg-transparent border-b border-white text-white lg:text-xl py-2 pr-10 pl-4 focus:outline-none"
                 onKeyDown={(event) => {
                   if (event.key === "Enter") {
                     handleSearch();
@@ -93,7 +93,7 @@ export default function SearchBar() {
             {isLoading && (
               <div
                 role="status"
-                className="mt-4 mx-auto flex items-center justify-center w-full"
+                className="mt-10 mx-auto flex items-center justify-center w-full gap-4"
               >
                 <svg
                   aria-hidden="true"
@@ -111,27 +111,34 @@ export default function SearchBar() {
                     fill="currentFill"
                   />
                 </svg>
-                <span className="sr-only">Cargando...</span>
+                <span>Buscando...</span>
               </div>
             )}
 
             {!isLoading && searchResult.length > 0 && (
-              <div className="mt-4">
-                {searchResult.map((producto, index) => (
-                  <a href={`/producto/${producto.id}`} key={index}>
-                    <div className="flex items-center mt-4">
-                      <div>
-                        <p className="text-white text-lg">
-                          {producto.acf.nombre}
-                        </p>
-                        <p className="text-gray-400">
-                          {producto.acf.descripcion}
-                        </p>
+              <>
+                <h4 className="text-border mt-2 font-light">
+                  Resultados de búsqueda
+                </h4>
+                <div className="mt-4">
+                  {searchResult.map((producto, index) => (
+                    <a
+                      href={`/producto/${producto.id}`}
+                      className="hover:opacity-50"
+                      key={index}
+                    >
+                      <div className="flex items-center mt-4 gap-4 ">
+                        <CheckCircleIcon className="w-5 h-5 text-primary" />
+                        <div>
+                          <p className="text-white text-lg">
+                            {producto.acf.nombre}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
+                    </a>
+                  ))}
+                </div>
+              </>
             )}
           </div>
           <button

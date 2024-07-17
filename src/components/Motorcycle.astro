@@ -6,6 +6,7 @@ import phone from "../assets/phone.svg";
 import share from "../assets/share.svg";
 import ContactForm from "./Form";
 import Gallery from "./Gallery.astro";
+import "../styles/main.css";
 import Overview from "./Overview.astro";
 import Specifications from "./Specifications.astro";
 let currentTab = 0;
@@ -17,7 +18,7 @@ const motorList = motorcycle.caracteristicas_motor.split(",");
 ---
 
 <div
-  class="text-white shadow-lg overflow-hidden flex lg:flex-row gap-7 flex-col-reverse"
+  class="text-white shadow-lg overflow-hidden flex lg:flex-row gap-16 flex-col-reverse"
 >
   <div
     class="flex flex-col gap-4 md:w-1/3 animate__animated animate__fadeInLeft animate__faster"
@@ -94,13 +95,15 @@ const motorList = motorcycle.caracteristicas_motor.split(",");
     >
       <div class="flex flex-col gap-1">
         <span class="text-gray-400">VIN:</span>
-        <span class="font-mono"> {motorcycle.vin}</span>
+        <span class="font-mono mb-2"> {motorcycle.vin}</span>
       </div>
-      <button
-        class="bg-primary py-3 hover:opacity-50 rounded-sm uppercase text-xs w-full font-bold"
-      >
-        Ver VIN
-      </button>
+      <a href="https://www.autozone.com/vin-decoder" target="_blank">
+        <button
+          class="bg-primary py-3 hover:opacity-50 rounded-sm uppercase text-xs w-full font-bold"
+        >
+          Ver VIN
+        </button>
+      </a>
     </div>
   </div>
 

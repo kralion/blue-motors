@@ -130,7 +130,7 @@ const DropdownMenu = ({ isOpen }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="w-[100%] left-0 absolute bg-gray-900 top-[96px]"
+          className="w-[100%] left-0 absolute bg-bg top-32"
           initial="collapsed"
           animate="open"
           exit="collapsed"
@@ -141,7 +141,6 @@ const DropdownMenu = ({ isOpen }) => {
           transition={{ duration: 0.3 }}
           style={{
             overflow: "hidden",
-            padding: "10px",
             borderBottomRightRadius: "5px",
             borderBottomLeftRadius: "5px",
           }}
@@ -157,16 +156,6 @@ const DropdownMenu = ({ isOpen }) => {
             {"Prouct Listining"}
             {"Woo Pages"}
           </MenuItem>
-          <MenuItem label="Blog">
-            {"Blog 2 Columns"}
-            {"Blog List"}
-            {"Blog Masonry"}
-          </MenuItem>
-          <MenuItem label="Pages">
-            {"About Us"}
-            {"Contact Us"}
-          </MenuItem>
-          <MenuItem label="My Account"></MenuItem>
         </motion.div>
       )}
     </AnimatePresence>

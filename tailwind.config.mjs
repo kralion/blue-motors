@@ -10,7 +10,7 @@ export default {
 				'bg': '#010101',
 			},
 			fontFamily: {
-				'sans': ['Orbitron', 'sans-serif'],
+				'orbitron': ['Orbitron', 'sans-serif'],
 			},
 		},
 	},

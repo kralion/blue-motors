@@ -12,7 +12,7 @@ export default function SubNavs() {
   return (
     <>
       <div className="bg-bg relative z-50 ">
-        <div className="bg-[#13151a] hidden md:flex">
+        <div className="bg-[#13151a] hidden md:flex ">
           <div className="container mx-auto gap-1 flex py-5 text-[#a5a6a5]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -46,8 +46,7 @@ export default function SubNavs() {
             </span>
           </div>
         </div>
-
-        <div className=" text-white p-4">
+        <div className=" text-white p-4 ">
           <div className="container mx-auto flex justify-between items-center">
             <button className="md:hidden text-white ">
               <DropDown className="" client:visible />
@@ -210,7 +209,8 @@ export default function SubNavs() {
               </div>
             </div>
           </div>
-        </div>
+        </div>{" "}
+        <hr className="border-gray-800 w-full" />
       </div>
     </>
   );

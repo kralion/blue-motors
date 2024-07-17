@@ -1,6 +1,5 @@
 ---
 export const prerender = false;
-import "../styles/main.css";
 import Layout from "../layouts/Layout.astro";
 import ProductCard from "../components/ProductCard.astro";
 import { extractImageUrl } from "../utils/image";
@@ -14,12 +13,13 @@ const productos = await response.json();
 <Layout title="Bluemotors - Inicio">
   <div
     class="lg:h-screen overflow-x-hidden flex flex-col lg:flex-row p-10 animate__animated animate__fadeInLeft"
-    style=" background-image: url('https://azwecdnepstoragewebsiteuploads.azureedge.net/PHO_STAGE_KTM-250-SX-Adamo-Edition-Stage_%23SALL_%23AEPI_%23V1.png');"
+    style="background-image: url('https://azwecdnepstoragewebsiteuploads.azureedge.net/PHO_STAGE_KTM-250-SX-Adamo-Edition-Stage_%23SALL_%23AEPI_%23V1.png'); background-position: center; background-size: cover; background-repeat: no-repeat;"
   >
     <div class="space-y-10 mt-80">
-      <h1 class="text-white text-[50px] font-sans w-2/3">
+      <h1 class="text-white lg:text-[50px] text-3xl lg:w-2/3">
         ¡Siente el rugido, vive la pasión de las motos!
       </h1>
+
       <div>
         <button
           class="bg-primary py-4 px-8 text-white text-center text-[20px] hover:opacity-70"
