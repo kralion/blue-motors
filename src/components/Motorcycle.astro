@@ -1,6 +1,5 @@
 ---
 export const prerender = false;
-const { motorcycle } = Astro.props;
 import "animate.css";
 import phone from "../assets/phone.svg";
 import share from "../assets/share.svg";
@@ -9,17 +8,35 @@ import Gallery from "./Gallery.astro";
 import "../styles/main.css";
 import Overview from "./Overview.astro";
 import Specifications from "./Specifications.astro";
+import Carousel from "../components/common/Carousel";
 let currentTab = 0;
+const { slug } = Astro.props;
 
 function switchTab(index) {
   currentTab = index;
 }
-const motorList = motorcycle.caracteristicas_motor.split(",");
+
+
+const response = await fetch(
+  `http://bluemotorsec.com/wp-json/wp/v2/motos?&acf_format=standard&slug=${slug}`
+);
+
+const producto = await response.json();
+
+
+const images = [
+  {src:  producto.imagen_1, alt: "image"},
+  {src:  producto.imagen_2, alt: "image"},
+  {src:  producto.imagen_3, alt: "image"},
+]
 ---
 
 <div
   class="text-white shadow-lg overflow-hidden flex lg:flex-row gap-16 flex-col-reverse"
 >
+  <dir>
+    <h1>Modelo {slug}</h1>
+  </dir>
   <div
     class="flex flex-col gap-4 md:w-1/3 animate__animated animate__fadeInLeft animate__faster"
   >
@@ -30,35 +47,34 @@ const motorList = motorcycle.caracteristicas_motor.split(",");
       >
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Tipo:</span>
-          {motorcycle.categoria}
+          {producto.modelo}
         </div>
 
         <hr class="border-gray-700" />
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Motor:</span>
-          {motorList[0]}
+          {producto.motor}
         </div>
         <hr class="border-gray-700" />
 
         <div class="flex justify-between">
-          <span class="text-gray-400 uppercase text-xs">Año:</span>
-          {motorcycle.anio}
+          <span class="text-gray-400 uppercase text-xs">:</span>
+          {producto.motor}
         </div>
         <hr class="border-gray-700" />
 
         <div class="flex justify-between">
           <span class="text-gray-400 uppercase text-xs">Colores:</span>
-          {motorcycle.colores.split(",").join(", ")}
+          {producto.colores}
         </div>
         <hr class="border-gray-700" />
 
         <div class="flex justify-between">
-          <span class="text-gray-400">VIN:</span>
-          {motorcycle.vin.slice(0, 10)}...
+          {producto.motor}
+
         </div>
       </div>
       <div class="mt-4 bg-light-bg">
-        <!-- TODO: Change to the STORE phone number -->
         <a
           href="https://wa.me/+51958455485?text=Hola, quiero reservar un coche motorizado"
           target="_blank"
@@ -95,7 +111,7 @@ const motorList = motorcycle.caracteristicas_motor.split(",");
     >
       <div class="flex flex-col gap-1">
         <span class="text-gray-400">VIN:</span>
-        <span class="font-mono mb-2"> {motorcycle.vin}</span>
+        <span class="font-mono mb-2">{producto.motor}</span>
       </div>
       <a href="https://www.autozone.com/vin-decoder" target="_blank">
         <button
@@ -111,10 +127,10 @@ const motorList = motorcycle.caracteristicas_motor.split(",");
     <div class="flex justify-between items-center lg:px-0 px-4">
       <div class="flex justify-items-start flex-col md:w-1/2">
         <h4 class="text-gray-400 uppercase text-xs lg:text-sm font-semibold">
-          {motorcycle.categoria}
+          {producto.marca}
         </h4>
         <h1 class="lg:text-3xl text-xl font-bold r">
-          {motorcycle.nombre}
+          {producto.modelo}
         </h1>
       </div>
       <div
@@ -122,13 +138,15 @@ const motorList = motorcycle.caracteristicas_motor.split(",");
       >
         <h5 class="text-white/60 lg:text-sm text-xs">Nuestro Precio</h5>
         <h1 class="lg:text-xl font-bold">
-          ${motorcycle.precio.toLocaleString()}
+          {producto.motor}
+
         </h1>
       </div>
     </div>
     <hr class="border-gray-500" />
+
     <div class="animate__animated animate__fadeInUp animate__faster">
-      <img src={motorcycle.imagen_principal} alt="imagen principal" />
+      <Carousel client:load images={images} />
     </div>
 
     <div class="flex flex-col">
@@ -163,23 +181,23 @@ const motorList = motorcycle.caracteristicas_motor.split(",");
         id="tab-0"
         class="tab-content p-4 animate__animated animate__fadeInUp animate__faster"
       >
-        <Overview
-          description={motorcycle.descripcion}
-          features={motorcycle.caracteristicas_principales}
-          colores={motorcycle.colores}
-        />
+        <!-- <Overview
+          description={producto.descripcion}
+          features={producto.cilindraje}
+          colores={producto.colores}
+        /> -->
       </div>
       <div
         id="tab-1"
         class="tab-content p-4 hidden animate__animated animate__fadeInUp animate__faster"
       >
-        <Specifications motorcycle={motorcycle} />
+        <!-- <Specifications producto={producto} /> -->
       </div>
       <div
         id="tab-2"
         class="tab-content p-4 hidden animate__animated animate__fadeInUp animate__faster"
       >
-        <Gallery motorcycle={motorcycle} />
+        <!-- <Gallery producto={producto} /> -->
       </div>
       <div
         id="tab-3"
