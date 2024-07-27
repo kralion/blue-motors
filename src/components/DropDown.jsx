@@ -37,6 +37,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
           strokeWidth="2"
           variants={line1Variants}
           animate={isOpen ? "open" : "closed"}
+          initial={isOpen ? "open" : "closed"}
           transition={{ duration: 0.3 }}
         />
         <motion.line
@@ -48,6 +49,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
           strokeWidth="2"
           variants={line2Variants}
           animate={isOpen ? "open" : "closed"}
+          initial={isOpen ? "open" : "closed"}
           transition={{ duration: 0.3 }}
         />
         <motion.line
@@ -59,6 +61,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
           strokeWidth="2"
           variants={line3Variants}
           animate={isOpen ? "open" : "closed"}
+          initial={isOpen ? "open" : "closed"}
           transition={{ duration: 0.3 }}
         />
       </motion.svg>

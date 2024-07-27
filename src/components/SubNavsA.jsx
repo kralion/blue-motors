@@ -58,7 +58,7 @@ export default function SubNavs() {
 
             <div className="hidden md:flex space-x-10">
               <Popover className=" ">
-                <PopoverButton>
+                <PopoverButton className='focus:outline-none'>
                   <a className="hover:text-primary transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
                     HOME
                     <svg
@@ -77,9 +77,9 @@ export default function SubNavs() {
                 </PopoverButton>
                 <PopoverPanel
                   transition
-                  className="absolute  -translate-x-1/2 left-[50%] z-10 mt-5 flex  max-w-max  px-4  transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                  className=" backdrop-blur-md bg-white/30 absolute -translate-x-1/2 left-[50%] z-10 mt-5 flex  max-w-max  px-4  transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                 >
-                  <div className="overflow-hidden text-gray-500 w-[1200px] px-[50px] m-0 mt-4 z-10 flex flex-wrap gap-4 py-4 bg-lighht-bg bg-white h-[330px]">
+                  <div className="overflow-hidden text-gray-500 w-[1200px] px-[50px] m-0 mt-4 z-10 flex flex-wrap gap-4 py-4 bg-lighht-bg h-[330px]">
                     <div className="flex-1 ">
                       <p className="font-bold mb-[20px]">HOMEPAGE DEMOS</p>
                       <div className="h-[2px] w-[20%] rounded-xl bg-primary"></div>
@@ -177,7 +177,7 @@ export default function SubNavs() {
                   </div>
                 </PopoverPanel>
               </Popover>
-              <Popover className=" relative ">
+              <Popover className=" ">
                 <PopoverButton className=" focus:outline-none  ">
                   <a className="hover:text-primary transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
                     Tienda
@@ -197,7 +197,7 @@ export default function SubNavs() {
                 </PopoverButton>
                 <PopoverPanel
                   transition
-                  className="absolute left-1/2 z-10 mt-9 flex w-screen max-w-max -translate-x-1/2  px-4 transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                  className=" absolute  left-[50%] z-10 mt-9 flex w-screen max-w-max -translate-x-1/2  transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                 >
                   <MenuTab />
                 </PopoverPanel>
