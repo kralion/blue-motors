@@ -1,9 +1,11 @@
 ---
-const { image, details, price, id, description } = Astro.props;
+const { image, details, price, id, description, slug } = Astro.props;
+
+console.log(slug);
 ---
 
 <a
-  href={`/producto/${id}`}
+  href={`/producto/${slug}`}
   class="relative
     hover:cursor-pointer lg:px-8 py-6 hover:opacity-80 duration-200 ease-in-out font-medium text-gray-200 flex flex-col gap-5"
 >
@@ -12,8 +14,12 @@ const { image, details, price, id, description } = Astro.props;
   <div class="space-y-5 px-4 lg:px-0">
     <div class="details hover:text-primary text-xl">{details}</div>
     <div class="text-white/50 font-light font-sans">{description}</div>
-    <div class="py-2 px-5 text-right bg-primary w-fit">
-      ${price}
+    <div class="text-white/50 font-light font-sans">{slug}</div>
+    
+    <div class="py-2 rounded-xl px-5 text-right bg-primary w-fit">
+      <span class="text-white font-bold">
+        Contactar
+      </span>
     </div>
     <div></div>
   </div>
