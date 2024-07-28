@@ -28,12 +28,14 @@ const productos = await response.json();
     lg:flex-row
     justify-center
     gap-20
-    lg:p-16"
+    lg:p-16
+    animate__fadeInLeft animate__bounce animate__delay-2s
+    "
   >
     <div>
       <div class="my-[20px] lg:pl-8 pl-4">
         <p class="font-medium mb-[10px] text-white">TOP RATED PRODUCTS</p>
-        <div class="h-[2px] w-[20%] rounded-xl bg-primary"></div>
+        <div class="h-[2px] w-[20%] rounded-xl bg-primary animate__fadeInLeft animate__bounce animate__delay-2s"></div>
       </div>
       <div>
         {

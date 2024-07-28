@@ -1,7 +1,11 @@
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
+import React, { useEffect, useState } from 'react';
 import DropDown from "./DropDown";
 import MenuTab from "./MenuTab";
 import SearchBar from "./common/SearchBar";
+import 'animate.css';
+
+
 const navItems = [
   { name: "Home", href: "/", hasDropdown: true },
   { name: "Mega Menu", href: "/mega-menu", hasDropdown: true },
@@ -9,6 +13,32 @@ const navItems = [
 ];
 
 export default function SubNavs() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://bluemotorsec.com/wp-json/wp/v2/motos?_fields=acf&acf_format=standard");
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Agrupar productos por marca
+  const productsByBrand = products.reduce((acc, item) => {
+    const brand = item.acf.marca.name;
+    if (!acc[brand]) {
+      acc[brand] = [];
+    }
+    acc[brand].push(item);
+    return acc;
+  }, {});
+
   return (
     <>
       <div className="bg-bg relative z-50 ">
@@ -179,7 +209,7 @@ export default function SubNavs() {
               </Popover>
               <Popover className=" ">
                 <PopoverButton className=" focus:outline-none  ">
-                  <a className="hover:text-primary transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
+                  <a className="animate_animated animate__fadeInLeft hover:text-primary transition duration-300 font-bold uppercase text-sm flex items-center gap-2">
                     Tienda
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +229,22 @@ export default function SubNavs() {
                   transition
                   className=" absolute  left-[50%] z-10 mt-9 flex w-screen max-w-max -translate-x-1/2  transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                 >
-                  <MenuTab />
+                  <div className="
+                  backdrop-blur-md bg-white/30 flex flex-col border-r-[1px] border-gray-200 *:py-[15px] *:pl-[20px] "   >
+                    {Object.keys(productsByBrand).map((brand) => (
+                      <div className="flex justify-between flex-col space-y-3 mt-[20px] pl-[9px] gap-y-[20px]
+                      " key={brand} style={{ flex: 1, margin: '0 10px' }}>
+                        <h2>{brand}</h2>
+                        {productsByBrand[brand].map((item, index) => (
+                          <a href="#" className=" w-[100px] relative hover:text-primary
+                            after:content-[''] after:bg-primary after:h-[0%] after:w-[3px] after:bottom-0 after:-left-[20px] after:rounded-x1 after:absolute after:duration-300
+                            after:hover:h-[100%]" key={index}>
+                              {item.acf.modelo}
+                          </a>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
                 </PopoverPanel>
               </Popover>
             </div>
