@@ -41,7 +41,7 @@ export default function SubNavs() {
 
   return (
     <>
-      <div className="bg-bg relative z-50 ">
+      <div className="bg-bg ">
         <div className="bg-[#13151a] hidden md:flex ">
           <div className="container mx-auto gap-1 flex py-5 text-[#a5a6a5]">
             <svg
@@ -227,12 +227,12 @@ export default function SubNavs() {
                 </PopoverButton>
                 <PopoverPanel
                   transition
-                  className=" absolute  left-[50%] z-10 mt-9 flex w-screen max-w-max -translate-x-1/2  transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                  className=" absolute  left-[50%] z-10 mt-9 flex  max-w-max -translate-x-1/2  transition data-[closed]:translate-y-[15%] data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                 >
                   <div className="
-                  backdrop-blur-md bg-white/30 flex flex-col border-r-[1px] border-gray-200 *:py-[15px] *:pl-[20px] "   >
+                  backdrop-blur-md bg-white/30 flex widthScroll border-gray-200 *:py-[15px] *:pl-[20px] "   >
                     {Object.keys(productsByBrand).map((brand) => (
-                      <div className="flex justify-between flex-col space-y-3 mt-[20px] pl-[9px] gap-y-[20px]
+                      <div className="flex  justify-start flex-col space-y-3 mt-[20px] pl-[9px] gap-y-[20px]
                       " key={brand} style={{ flex: 1, margin: '0 10px' }}>
                         <h2>{brand}</h2>
                         {productsByBrand[brand].map((item, index) => (
