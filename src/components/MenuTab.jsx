@@ -36,7 +36,7 @@ export default function MenuTab() {
           </div>
         </TabList>
         <TabPanels className="p-[20px] overflow-x-hidden">
-          <TabPanel transition className="p-[15px]" key={""}>
+          <TabPanel transition className="relative p-[15px] w-full  left-[10px] right-[10px] " key={""}>
             <div className="flex ">
               <div className="flex flex-col">
                 <div className="my-[20px]">
@@ -66,7 +66,7 @@ export default function MenuTab() {
           </TabPanel>
 
           <TabPanel key={""} className="p-[15px]">
-            <div className="flex ">
+            <div className="flex   ">
               <div className="flex flex-col">
                 <div className="my-[20px]">
                   <p className="font-medium mb-[10px]">PRODUCTS</p>

@@ -3,9 +3,11 @@ export const prerender = false;
 import Layout from "../layouts/Layout.astro";
 import ProductCard from "../components/ProductCard.astro";
 import { extractImageUrl } from "../utils/image";
-import "animate.css";
+import AnimationCard from "./../animations/animationCards";
+import "./../styles/animates.css";
+import { motion } from "framer-motion";
 const response = await fetch(
-  "http://bluemotorsec.com/wp-json/wp/v2/motos?acf_format=standard"
+  "http://bluemotorsec.com/wp-json/wp/v2/motos?acf_format=standard",
 );
 const productos = await response.json();
 ---
@@ -22,45 +24,45 @@ const productos = await response.json();
 
       <div>
         <button
-          class="bg-primary rounded-xl py-4 px-8 text-white text-center text-[20px] hover:opacity-70"
+          class="animate_animated animate__fadeInLeft
+          bg-primary rounded-xl py-4 px-8 text-white text-center text-[20px] hover:opacity-70"
         >
           <a href="/tienda">Ver Tienda</a>
         </button>
       </div>
     </div>
   </div>
-  <div
-    class="flex
-    flex-col
+  <div class="flex
+    
     lg:flex-row
     justify-center
     gap-20
-    lg:p-16"
-  >
-    <div>
+    lg:p-16">
+    <div class="">
       <div class="my-[20px] lg:pl-8 pl-4">
         <p class="font-medium mb-[10px] text-white">TOP RATED PRODUCTS</p>
         <div class="h-[2px] w-[20%] rounded-xl bg-primary"></div>
       </div>
-      <div>
+      <div class="animates grid grid-cols-3 gap-6">
         {
           productos.map((item, index) => {
             return (
               <ProductCard
-                details={item.acf.nombre}
-                price={item.acf.precio}
-                slug={item.slug}
-                description={item.acf.descripcion}
-                image={item.acf.imagen_1}
-                alt={item.modelo}
-              />
+                  details={item.acf.nombre}
+                  price={item.acf.precio}
+                  slug={item.slug}
+                  description={item.acf.descripcion}
+                  image={item.acf.imagen_1}
+                  alt={item.modelo}
+                  delay={index}
+                  client:visible
+                />
             );
           })
         }
       </div>
     </div>
-
-    <div>
+      <!-- <div>
       <div class="my-[20px] lg:pl-8 pl-4">
         <p class="font-medium mb-[10px] text-white">SALE PRODUCTS</p>
         <div class="h-[2px] w-[20%] rounded-xl bg-primary"></div>
@@ -77,6 +79,7 @@ const productos = await response.json();
           />
         ))
       }
+    </div> -->
     </div>
   </div>
 </Layout>
