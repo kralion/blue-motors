@@ -1,18 +1,10 @@
 ---
-const { image, details, price, id, description, slug, delay} = Astro.props;
-import { motion } from "framer-motion";
-console.log(slug);
-const delayA = delay*0.2; 
+const { image, details, description, slug} = Astro.props;
 ---
 
 
-<motion.a
-  client:visible
-  initial={{ opacity: 0, x: -100 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.2, delay: delayA }}
-  href={`/producto/${slug}`}
-  className="relative w-[450px] hover:cursor-pointer lg:px-8 py-6 hover:opacity-80 duration-200 ease-in-out font-medium text-gray-200 flex flex-col gap-5"
+<a
+  class="relative w-[450px] hover:cursor-pointer lg:px-8 py-6 hover:opacity-80 duration-200 ease-in-out font-medium text-gray-200 flex flex-col gap-5"
 >
   <div class="w-[350px] h-[300px] overflow-hidden flex items-center">
     <img src={image} alt="Logo" class="cover w-md w-[350px]" />
@@ -27,4 +19,4 @@ const delayA = delay*0.2;
       <span class="text-white font-bold ">Mono Baboso</span>
     </div>
   </div>
-</motion.a>
+</a>
