@@ -53,11 +53,10 @@ export default function SubNavs() {
 
         <nav class=" text-white p-4">
           <div class="container mx-auto flex justify-between items-center">
-          <button
-                            class="md:hidden text-white " >
-                        
-                            <DropDown class='' client:visible />
-                        </button>
+            <button class="md:hidden text-white " >
+
+              <DropDown class=''  />
+            </button>
 
             <div class="flex justify-center md:justify-start">
               <img

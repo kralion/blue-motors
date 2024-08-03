@@ -78,9 +78,11 @@ const MenuItem = ({ label, children, route }) => {
       >
         <a href={route} >{label}</a>
         {children && <span style={{ marginLeft: 'auto' }}>
+        <div className='fill-white rotate-45 hover:rotate-[-315deg] hover:fill-red-dark transition  ease-out delay-300'>
         <svg onClick={toggleSubMenu}
-        style={{ cursor: 'pointer' }} className='fill-white rotate-45 hover:rotate-[-315deg] hover:fill-red-dark transition  ease-out delay-300'
+        style={{ cursor: 'pointer' }} 
         xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="20" height="20"><path d="M0,7A1,1,0,0,1,1,6H18V2.639a.792.792,0,0,1,1.35-.552l4.418,4.361a.773.773,0,0,1,0,1.1L19.35,11.913A.792.792,0,0,1,18,11.361V8H1A1,1,0,0,1,0,7Zm23,9H6V12.639a.792.792,0,0,0-1.35-.552L.232,16.448a.773.773,0,0,0,0,1.1L4.65,21.913A.792.792,0,0,0,6,21.361V18H23a1,1,0,0,0,0-2Z"/></svg>
+        </div>
           </span>}
       </div>
       <AnimatePresence>
@@ -99,10 +101,10 @@ const MenuItem = ({ label, children, route }) => {
             <div>
               {Array.isArray(children) ? 
                 children.map((child, index) => (
-                  <React.Fragment key={index}>
-                    <div className='box-border px-5 w-full h-[60px] flex items-center bg-gray-700 border-b-gray-600 border-b-[.5px] hover:text-red-dark transition ease-in-out delay-150'>
+                  <React.Fragment key={index} >
+                    <a className='box-border px-5 w-full h-[60px] flex items-center bg-gray-700 border-b-gray-600 border-b-[.5px] hover:text-red-dark transition ease-in-out delay-150'>
                       {child}
-                    </div>
+                    </a>
                   </React.Fragment>
                 )) 
                 : 
@@ -137,13 +139,6 @@ const DropdownMenu = ({ isOpen }) => {
             borderBottomLeftRadius: '5px',
           }}
         >
-          <MenuItem label="Home" route={'./'}>
-            {'Home 1'}
-            {'Home 2'}
-            {'Home LookBook 1'}
-            {'Home LookBook 2'}
-            {'Home Parallax'}
-          </MenuItem>
           <MenuItem label="Shop" route={'./productos'}>
             {'Prouct Listining'}
             {'Woo Pages'}
@@ -152,12 +147,6 @@ const DropdownMenu = ({ isOpen }) => {
             {'Blog 2 Columns'}
             {'Blog List'}
             {'Blog Masonry'}
-          </MenuItem>
-          <MenuItem label="Pages">
-            {'About Us'}
-            {'Contact Us'}
-          </MenuItem>
-          <MenuItem label="My Account">
           </MenuItem>
         </motion.div>
       )}
